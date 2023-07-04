@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
-
+import urllib3
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 
 st.write("click di bawah untuk memilih memasukkan orderan")
@@ -20,30 +20,6 @@ for x,y in zip(nama,no) :
     p[f"data{o}"]= {'nama': x,'no': y}
     o += 1
     l['data'] = p
-
-from google.cloud import firestore
-
-# Authenticate to Firestore with the JSON account key.
-db = firestore.Client.from_service_account_json("firestore-key.json")
-
-# Create a reference to the Google post.
-doc_ref = db.collection("posts").document("Google")
-
-# Then get the data at that reference.
-doc = doc_ref.get()
-
-# Let's see what we got!
-st.write("The id is: ", doc.id)
-st.write("The contents are: ", doc.to_dict())
-
-
-
-
-
-
-
-
-
 
 open_modal = st.button("Open")
 if open_modal:

@@ -1,3 +1,11 @@
+import mysql.connector
 
-import sqlalchemy
-sqlalchemy.__version__
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="kali",
+    database="pets"
+)
+
+mycursor=mydb.cursor()
+print("test")
