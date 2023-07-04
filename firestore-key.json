@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "dazzling-trail-391715",
+  "private_key_id": "2efdd5210e25d8f0a7a7bf2642ff5f48e7e724b3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/JVR6EDqLh/Hj\n/eNecme9/VYrZZ0uETv1IKQKOu7/e79WFqI3RN2GKbD2d3XgKJvl+FrOdMH30ypX\nVl0a4D9p4J5LN8iGf/9df4XwxUQFd5LqyIMconGegKoKeoib5o+FSA7LvI+sabJy\nnLlEIGMYT4dVZLJpHHGo04odcI+qbQqtKGTL20L2ijSAsVbiU6TACtaVXk74BGLr\njoqca2v1rlfGsxCMbblsACPfBit3/4F9zFeI1ReNaY4kO7tCQQDFhd97PQq2tBU7\nnk/4kwReSHWth3chj8CRF3+7DWsuZvSlYPGywwQzAfCIXVgARL+67jeLhxzkSo2O\nrYSjcYKzAgMBAAECggEAD04OYw2smmKCuEYqb/QKIXjI7wWeXcNsgRahe943J8bB\nTcPXLkS51hW9gSaUjiPCQ9osby6DH3RNhhu4rb+55CDjm9M2H6rdCB//WgV5ilSG\nM31lniPVpCLaOqeQC6ec40efQ6nv+RanfqzU2sMbHCW2CNzcujTYVvPFMdFC95rK\n880DzitVXlklLemu/UqRajxyFia5fXXqklLbDbkMPdP4GGWNWDBzH87UqrxtE84h\n3+DDTo9FWzRZCZiypZB9CYd/9/wOZP8l59FdyDay4hCd3a6QFnDp/5zgbuxzLD9+\nzekMFKxLxRFMtDTswFn3PgARYGr7Y/l2661aBth8PQKBgQDzSG8mqtywL9boPdO0\neZ/9K3lVH9M4YrvI257b8dpEVzuiF/VmKcNhhlGUn0jaBsR/asiaDQSaDba1Lg9z\nCSqVdJC5yQp0jqDEcfSMlUgy1qQfCRKunad48Yg1V5vdZVEXoP6JOOdoZZrhn82Z\nPmagh7bs/y95GnFvhKGq3ANuDwKBgQDJIzTuph9Oa1l7rXGOQw+tfi7MMXkOIl/x\npO37FZi+Gk2jASG8i80i4SvjylVj+Cjy5s7+kllvKD3GmMMppXUIc8nTfm9zr/Ci\nVXGVD/4ZYKNj+He4u6st6YYqXumJQ2GsQs/uYWXq0QifEXYozX4I9KiHCt+dAmvq\nvBlH81xFHQKBgDhFvegMx4U9W5FWk7yAEYCm6KbG+L1nIRaBrkojtB/wqYuBzTJ3\nYIkTX5VoDprXy+XJFmODtVfI6kUYRVyPdzkgwEUo+nEheJBX54AJG60ettGy8I5R\nSyaPf7kO7a+VOt+jTp0A+43LSrr7krvqkiR5n9dL43g4pJpt7FMwFt8DAoGAe7U/\ntRhPYPf9jWfb09fDKL3XIpe7EMproEAEbs2VqDadUYg8q66AeNdtGyky482Zwevb\nnA9/GjLx69fBEThGhvBQTdgRzGGF6xIKTdgMPKeHVtFXMTOb0R0z+5Nsp5Pd2wks\nwjz9ZjMyzkL7HZVl0zRHAufZKMR4g2M1WV+AfLECgYEA3bI2dDJ0f92yWwORtgHJ\n/ccGHQJDfM2VuC00czGpKHSRLoh3GpJnfVDOJOz1hMGkWh0T5CBzfK6sLL56qjxf\ndUVmlSBbTuBOlUi4IWFXBbVbVI2zWye/VnvaJz74MGTvAdHcuI2hAe++86oylk2d\nsKIx4wL6Kj6lBtxczBMwH1U=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-74bh5@dazzling-trail-391715.iam.gserviceaccount.com",
+  "client_id": "116074519295093003653",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-74bh5%40dazzling-trail-391715.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
