@@ -72,7 +72,6 @@ streamlit-keyup==0.2.0
 streamlit-modal==0.1.0
 streamlit-toggle-switch==1.0.2
 streamlit-vertical-slider==1.0.2
-protobuf==3.20.1
 tenacity==8.2.2
 toml==0.10.2
 toolz==0.12.0
