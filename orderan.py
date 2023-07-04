@@ -23,7 +23,7 @@ doc = doc_ref.get()
 # Let's see what we got!
 st.write("The id is: ", doc.id)
 st.write("The contents are: ", doc.to_dict())
-
+st.write(type(doc.to_dict()))
 modal = Modal(key="Demo Modal", title="")
 l1 = ["a","b","c"]
 nama = ['endang','sukijem','larry']
