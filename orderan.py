@@ -15,7 +15,7 @@ from google.cloud import firestore
 db = firestore.Client.from_service_account_json("firestore-key.json")
 
 # Create a reference to the Google post.
-doc_ref = db.collection("meina").document("customer")
+doc_ref = db.collection("meina").document("customer").collection("cust 1").document("cust 1")
 
 # Then get the data at that reference.
 doc = doc_ref.get()
