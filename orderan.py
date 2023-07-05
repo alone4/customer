@@ -44,14 +44,14 @@ if modal.is_open():
                         kota = st.text_input("kota", key="nama6")
                         ekspedisi = st.selectbox("pilih ekspedisi", eks_choice, key="nama7")
                         metode_pem = st.selectbox("pilih pembayaran", metode_choice, key="nama8")
-                status = st.selectbox("status orderan", status_choice)
+                status = st.selectbox("status orderan", status_choice, key="nama9")
                 if status == "dikirim nanti":
-                        harga_barang = st.number_input("harga barang awal")
-                        diskon = st.number_input("jumlah diskon")
-                        ongkir = st.number_input("biaya ongkir")
+                        harga_barang = st.number_input("harga barang awal", key="nama11")
+                        diskon = st.number_input("jumlah diskon", key="nama12")
+                        ongkir = st.number_input("biaya ongkir", key="nama13")
                         update_harga = harga_barang+ongkir-diskon
-                        harga_akhir = st.number_input("harga akhir")
-                        closing_by = st.selectbox("closing by", cs_by)
+                        harga_akhir = st.number_input("harga akhir", key="nama14")
+                        closing_by = st.selectbox("closing by", cs_by, key="nama15")
                         tanggal = datetime.datetime.now()
                 elif status == "dikirim nanti":
                         harga_barang = st.number_input("harga barang awal")
