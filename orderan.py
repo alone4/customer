@@ -11,7 +11,7 @@ st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 # Authenticate to Firestore with the JSON account key.
 
-orderan = Modal("Orderan")
+orderan = Modal("Demo model")
 open_modal = st.button("Input Orderan")
 if open_modal:
     orderan.open()
