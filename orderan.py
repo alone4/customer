@@ -9,7 +9,7 @@ from google.cloud import firestore
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
-# Authenticate to Firestore with the JSON account key.
+
 modal = Modal("Demo Modal")
 open_modal = st.button("Open")
 if open_modal:
