@@ -38,13 +38,13 @@ with cs:
             with st.container():
                 col1,col2,col3 = st.columns(3)
                 with col1:
-                    col1,col2,col3 = st.columns(3)
+                    c1,c2,c3 = st.columns(3)
                     st.subheader("Jumlah Orderan")
-                    with col1:
+                    with c1:
                        st.write("")
-                    with col2:
+                    with c2:
                         st.write("8")
-                    with col3:
+                    with c3:
                         st.write("")
                 with col2:
                     st.subheader("Belum Transfer")
