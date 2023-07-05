@@ -41,6 +41,7 @@ if modal.is_open():
                 harga_barang = st.number_input("harga barang awal")
                 diskon = st.number_input("jumlah diskon")
                 ongkir = st.number_input("biaya ongkir")
+                jumlah_barang = st.number_input("jumlah barang")
                 update_harga = harga_barang+ongkir-diskon
                 harga_akhir = st.number_input("harga akhir")
                 closing_by = st.selectbox("closing by", cs_by)
@@ -53,6 +54,7 @@ if modal.is_open():
                             "alamat": alamat,
                             "kota": kota,
                             "barang": barang,
+                            "jumlah_barang": jumlah_barang,
                             "ekspedisi": ekspedisi,
                             "metode pembayaran": metode_pem,
                             "status": status,
