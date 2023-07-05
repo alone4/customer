@@ -45,7 +45,8 @@ if modal.is_open():
                     ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                     metode_pem = st.selectbox("pilih pembayaran", metode_choice)
                 status = st.selectbox("status orderan", status_choice)
-                if status == "dikirim nanti":
+                if status == status_choice[1]:
+                    
                     tanggal_pengiriman = st.date_input(
                         "kapan barang dikirim?",
                         datetime.datetime.now()
