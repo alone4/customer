@@ -19,7 +19,7 @@ status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pendi
 cs_by = ["salma","alya","salsa","intan"]
 # Create a reference to the Google post.
 # Let's see what we got!
-cs,shipping,admin = st.tabs(3)
+cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         st.header("CS")
         orderan,wa_masuk,fu,ro,barang= st.tabs(4)
