@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
-from google.cloud import firestore
 
 modal = Modal("Demo Modal")
 open_modal = st.button("Open")
