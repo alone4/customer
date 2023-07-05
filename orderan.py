@@ -22,7 +22,6 @@ cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
         with orderan:
-            st.header("Orderan")
             with st.container():
                 col1,col2,col3,col4 = st.columns(4)
                 with col1:
@@ -40,10 +39,11 @@ with cs:
                 col1,col2,col3 = st.columns(3)
                 with col1:
                     st.subheader("Jumlah Orderan")
+                    st.write("8")
                 with col2:
-                    st.title("Belum Transfer")
+                    st.subheader("Belum Transfer")
                 with col3:
-                    st.title("Orderan Pending")
+                    st.subheader("Orderan Pending")
                  
             
             with st.form("Masukkan orderan"):
