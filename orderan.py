@@ -33,25 +33,34 @@ if modal.is_open():
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
                 col1,col2= st.columns(2)
-                with col1:
-                    nama = st.text_input("nama customer")
-                    nama_wa = st.text_input("nama wa customer")
-                    no_hp = st.number_input("no hp")
-                    barang = st.text_input("nama barang")
-                    jumlah_barang = st.number_input("jumlah barang")
-                with col2:
-                    alamat = st.text_area("alamat")
-                    kota = st.text_input("kota")
-                    ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                    metode_pem = st.selectbox("pilih pembayaran", metode_choice)
+                while True:
+                    with col1:
+                        nama = st.text_input("nama customer")
+                        nama_wa = st.text_input("nama wa customer")
+                        no_hp = st.number_input("no hp")
+                        barang = st.text_input("nama barang")
+                        jumlah_barang = st.number_input("jumlah barang")
+                    with col2:
+                        alamat = st.text_area("alamat")
+                        kota = st.text_input("kota")
+                        ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                        metode_pem = st.selectbox("pilih pembayaran", metode_choice)
                 status = st.selectbox("status orderan", status_choice)
-                harga_barang = st.number_input("harga barang awal")
-                diskon = st.number_input("jumlah diskon")
-                ongkir = st.number_input("biaya ongkir")
-                update_harga = harga_barang+ongkir-diskon
-                harga_akhir = st.number_input("harga akhir")
-                closing_by = st.selectbox("closing by", cs_by)
-                tanggal = datetime.datetime.now()
+                if status == "dikirim nanti":
+                        harga_barang = st.number_input("harga barang awal")
+                        diskon = st.number_input("jumlah diskon")
+                        ongkir = st.number_input("biaya ongkir")
+                        update_harga = harga_barang+ongkir-diskon
+                        harga_akhir = st.number_input("harga akhir")
+                        closing_by = st.selectbox("closing by", cs_by)
+                        tanggal = datetime.datetime.now()
+                elif status == "dikirim nanti":
+                        harga_barang = st.number_input("harga barang awal")
+                        diskon = st.number_input("jumlah diskon")
+                        ongkir = st.number_input("biaya ongkir")
+                        update_harga = harga_barang+ongkir-diskon
+                        harga_akhir = st.number_input("harga akhir")
+                        closing_by = st.selectbox("closing by", cs_by)
                 if st.form_submit_button("submit"):
                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                     doc_input.set({
