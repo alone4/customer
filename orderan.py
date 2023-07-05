@@ -10,7 +10,7 @@ BOOTSTRAP = (
     'azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" '
     'crossorigin="anonymous">'
 )
-st.markdown(BOOTSTRAP, unsafe_allow_html=False)
+st.markdown(BOOTSTRAP)
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 
 st.write("click di bawah untuk memilih memasukkan orderan")
