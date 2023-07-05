@@ -46,7 +46,7 @@ if modal.is_open():
                 harga_akhir = st.number_input("harga akhir")
                 closing_by = st.selectbox("closing by", cs_by)
                 tanggal = datetime.datetime.now()
-                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document("tanggal")
+                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(tanggal)
                 doc = doc_ref.get()
                 doc_ref.set({
                         "nama": nama,
