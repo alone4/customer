@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from streamlit_extras.switch_page_button import switch_page
+from st_bridge import bridge, html
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 import datetime
@@ -25,9 +25,8 @@ open_modal = st.button("Open")
 if open_modal:
     modal.open()
 
-
-
 if modal.is_open():
+    with Modal.container:
         with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
