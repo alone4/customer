@@ -12,8 +12,8 @@ st.write("click di bawah untuk memilih memasukkan orderan")
 # Authenticate to Firestore with the JSON account key.
 
 orderan = Modal("Demo model")
-open_modal = st.button("Input Orderan")
-if open_modal:
+open_order = st.button("Input Orderan")
+if open_order:
     orderan.open()
 
 db = firestore.Client.from_service_account_json("firestore-key.json")
