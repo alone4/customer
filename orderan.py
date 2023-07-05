@@ -23,33 +23,28 @@ with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
         with orderan:
             st.header("Orderan")
-            col1,col2,col3,col4 = st.columns(4)
-            with col1:
-                 st.write("")
-            with col2:
-                 st.write("")
-            with col3:
-                 st.write("")
-            with col4:
-                min_date = datetime.datetime(2023,7,5)
-                max_date = datetime.date(2023,12,31)
+            with st.container:
+                col1,col2,col3,col4 = st.columns(4)
+                with col1:
+                    st.write("")
+                with col2:
+                    st.write("")
+                with col3:
+                    st.write("")
+                with col4:
+                    min_date = datetime.datetime(2023,7,5)
+                    max_date = datetime.date(2023,12,31)
 
-                a_date = st.date_input("Pilih tanggal", (min_date, max_date))
-
-            st.markdown("""<div class="container">
-  <div class="row">
-    <div class="col">
-      First in DOM, no order applied
-    </div>
-    <div class="col order-5">
-      Second in DOM, with a larger order
-    </div>
-    <div class="col order-1">
-      Third in DOM, with an order of 1
-    </div>
-  </div>
-</div>""", unsafe_allow_html=True)
-
+                    a_date = st.date_input("Pilih tanggal", (min_date, max_date))
+            with st.container:
+                col1,col2,col3 = st.columns(3)
+                with col1:
+                    st.title("Jumlah Orderan")
+                with col2:
+                    st.title("Belum Transfer")
+                with col3:
+                    st.write("Orderan Pending")
+                 
             
             with st.form("Masukkan orderan"):
                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
