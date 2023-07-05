@@ -1,11 +1,8 @@
 import pandas as pd
 import streamlit as st
-from streamlit.web import bootstrap
 import datetime
-import streamlit as st
 import streamlit_modal as Modal
 import streamlit.components.v1 as components
-from CO import *
 from google.cloud import firestore
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
