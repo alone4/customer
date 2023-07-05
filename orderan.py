@@ -18,13 +18,13 @@ cs_by = ["salma","alya","salsa","intan"]
 # Create a reference to the Google post.
 # Let's see what we got!
 
-modal = Modal("Demo Modal")
-open_modal = st.button("Open")
-if open_modal:
-    modal.open()
+order = Modal("Demo Modal")
+open_order = st.button("Open")
+if open_order:
+    order.open()
 
-if modal.is_open():
-    with modal.container():
+if order.is_open():
+    with order.container():
         st.write("Text goes here")
 
         html_string = '''
