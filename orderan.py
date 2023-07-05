@@ -11,6 +11,12 @@ from google.cloud import firestore
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 # Authenticate to Firestore with the JSON account key.
+
+orderan = Modal("Orderan")
+open_modal = st.button("Input Orderan")
+if open_modal:
+    orderan.open()
+
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
 metode_choice = ["COD","TRANSFER"]
@@ -78,7 +84,7 @@ with cs:
                         max_date = datetime.date(2023,12,31)
             
             with st.form("Masukkan orderan"):
-                    check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
+                    check = st.radio("apakah customer sudah pernah membeli?", ("belum","sudah"))
                     if check == "belum":
                         col1,col2= st.columns(2)
                         with col1:
