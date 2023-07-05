@@ -39,7 +39,7 @@ with cs:
             co1,co2,co3 = st.columns(3)
             with co1:
                  st.title("Jumlah Orderan")
-                 bootstrap(f""" <div class="align-self-center">8 </div>""")
+                 bootstrap.run(f""" <div class="align-self-center">8 </div>""")
             with co2:
                  st.title("Belum Bayar (TF)")
             with co3:
