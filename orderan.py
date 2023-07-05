@@ -48,8 +48,22 @@ with cs:
                         st.write("")
                 with col2:
                     st.subheader("Belum Transfer")
+                    c1,c2,c3 = st.columns(3)
+                    with c1:
+                       st.write("")
+                    with c2:
+                        st.write("8")
+                    with c3:
+                        st.write("")
                 with col3:
                     st.subheader("Orderan Pending")
+                    c1,c2,c3 = st.columns(3)
+                    with c1:
+                       st.write("")
+                    with c2:
+                        st.write("8")
+                    with c3:
+                        st.write("")
                  
             
             with st.form("Masukkan orderan"):
