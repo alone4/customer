@@ -25,20 +25,25 @@ open_modal = st.button("Open")
 if open_modal:
     modal.open()
 
+
+
 if modal.is_open():
     with modal.container():
         with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
-                nama = st.text_input("nama customer")
-                nama_wa = st.text_input("nama wa customer")
-                no_hp = st.number_input("no hp")
-                alamat = st.text_area("alamat")
-                kota = st.text_input("kota")
-                barang = st.text_input("nama barang")
-                jumlah_barang = st.number_input("jumlah barang")
-                ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                metode_pem = st.selectbox("pilih pembayaran", metode_choice)
+                col1,col2= st.columns()
+                with col1:
+                    nama = st.text_input("nama customer")
+                    nama_wa = st.text_input("nama wa customer")
+                    no_hp = st.number_input("no hp")
+                    barang = st.text_input("nama barang")
+                    jumlah_barang = st.number_input("jumlah barang")
+                with col2:
+                    alamat = st.text_area("alamat")
+                    kota = st.text_input("kota")
+                    ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                    metode_pem = st.selectbox("pilih pembayaran", metode_choice)
                 status = st.selectbox("status orderan", status_choice)
                 harga_barang = st.number_input("harga barang awal")
                 diskon = st.number_input("jumlah diskon")
