@@ -18,7 +18,7 @@ cs_by = ["salma","alya","salsa","intan"]
 # Create a reference to the Google post.
 # Let's see what we got!
 
-order = Modal("Demo Modal")
+order = Modal(key="Demo Modal", title="order")
 open_order = st.button("Open")
 if open_order:
     order.open()
