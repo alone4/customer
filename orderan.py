@@ -10,7 +10,7 @@ st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 
 def align_center():
-     return """<<div class="container">
+     return """<div class="container">
   <div class="row">
     <div class="col">
       First in DOM, no order applied
