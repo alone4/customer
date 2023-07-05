@@ -32,7 +32,7 @@ if modal.is_open():
         with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
-                col1,col2= st.columns()
+                col1,col2= st.columns(2)
                 with col1:
                     nama = st.text_input("nama customer")
                     nama_wa = st.text_input("nama wa customer")
