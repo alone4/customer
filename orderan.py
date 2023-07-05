@@ -10,11 +10,27 @@ from google.cloud import firestore
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 # Authenticate to Firestore with the JSON account key.
+modal = Modal("Demo Modal")
+open_modal = st.button("Open")
+if open_modal:
+    modal.open()
 
-orderan = Modal("Demo model")
-open_order = st.button("Input Orderan")
-if open_order:
-    orderan.open()
+if modal.is_open():
+    with modal.container():
+        st.write("Text goes here")
+
+        html_string = '''
+        <h1>HTML string in RED</h1>
+
+        <script language="javascript">
+          document.querySelector("h1").style.color = "red";
+        </script>
+        '''
+        components.html(html_string)
+
+        st.write("Some fancy text")
+        value = st.checkbox("Check me")
+        st.write(f"Checkbox checked: {value}")
 
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
@@ -105,7 +121,7 @@ with cs:
 
                                 peng = st.selectbox("apakah dikirim nanti?", ["ya","tidak"])
                                 if metode_pem == "TRANSFER" and peng == "ya":
-                                    with modal.container():
+                
                                         with st.form("Masukkan orderan"):
                                             status = st.selectbox("status orderan", status_choice[0,1,2])
                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
