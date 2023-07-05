@@ -107,7 +107,6 @@ with cs:
 
                                 peng = st.selectbox("apakah dikirim nanti?", ["ya","tidak"])
                                 if metode_pem == "TRANSFER" and peng == "ya":
-                                    with modal.container():
                                         with st.form("Masukkan orderan"):
                                             status = st.selectbox("status orderan", status_choice[0,1,2])
                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
