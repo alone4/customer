@@ -38,8 +38,8 @@ with cs:
             with st.container():
                 col1,col2,col3 = st.columns(3)
                 with col1:
-                    c1,c2,c3 = st.columns(3)
                     st.subheader("Jumlah Orderan")
+                    c1,c2,c3 = st.columns(3)
                     with c1:
                        st.write("")
                     with c2:
