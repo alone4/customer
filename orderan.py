@@ -3,6 +3,9 @@ import streamlit as st
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 import datetime
+from CO import *
+
+bootsrap
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 
 st.write("click di bawah untuk memilih memasukkan orderan")
@@ -32,11 +35,23 @@ with cs:
             with col3:
                  st.write("")
             with col4:
-                min_date = datetime.datetime(2020,1,1)
-                max_date = datetime.date(2022,1,1)
+                min_date = datetime.datetime(2023,7,5)
+                max_date = datetime.date(2023,12,31)
 
-                a_date = st.date_input("Pick a date", (min_date, max_date))
+                a_date = st.date_input("Pilih tanggal", (min_date, max_date))
 
+            co1,co2,co3 = st.columns(3)
+            with co1:
+                 st.title("Jumlah Orderan")
+                 st.markdown=(f""" <div class="row align-items-center">
+    <div class="col">
+      8
+    </div>""")
+            with co2:
+                 st.title("Belum Bayar (TF)")
+            with co3:
+                 st.title("Orderan Pending")
+            
             with st.form("Masukkan orderan"):
                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                     if check == "belum":
