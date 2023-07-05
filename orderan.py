@@ -46,21 +46,22 @@ if modal.is_open():
                 harga_akhir = st.number_input("harga akhir")
                 closing_by = st.selectbox("closing by", cs_by)
                 tanggal = datetime.datetime.now()
-                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                doc_input.set({
-                        "nama": nama,
-                        "no_telp": no_hp,
-                        "alamat": alamat,
-                        "kota": kota,
-                        "barang": barang,
-                        "ekspedisi": ekspedisi,
-                        "metode pembayaran": metode_pem,
-                        "status": status,
-                        "harga_barang": harga_barang,
-                        "diskon": diskon,
-                        "ongkir": ongkir,
-                        "harga_akhir": harga_akhir,
-                        "closing_by": closing_by
+                if st.button("submit"):
+                    doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                    doc_input.set({
+                            "nama": nama,
+                            "no_telp": no_hp,
+                            "alamat": alamat,
+                            "kota": kota,
+                            "barang": barang,
+                            "ekspedisi": ekspedisi,
+                            "metode pembayaran": metode_pem,
+                            "status": status,
+                            "harga_barang": harga_barang,
+                            "diskon": diskon,
+                            "ongkir": ongkir,
+                            "harga_akhir": harga_akhir,
+                            "closing_by": closing_by
                 })
             else:
                 pilih = st.selectbox('pilih nama orang', l.get('data'))
