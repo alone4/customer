@@ -47,8 +47,8 @@ if modal.is_open():
                 closing_by = st.selectbox("closing by", cs_by)
                 tanggal = datetime.datetime.now()
                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                doc = doc_ref.get()
-                doc_ref.set({
+                doc = doc_input.get()
+                doc_input.set({
                         "nama": nama,
                         "no_telp": no_hp,
                         "alamat": alamat,
