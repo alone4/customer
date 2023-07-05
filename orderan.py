@@ -1,4 +1,3 @@
-import bootstrap4 as bs
 import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
