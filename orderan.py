@@ -29,38 +29,30 @@ if open_modal:
 
 if modal.is_open():
     with modal.container():
+        with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
                 col1,col2= st.columns(2)
-                while True:
-                    with col1:
-                        nama = st.text_input("nama customer", key="nama")
-                        nama_wa = st.text_input("nama wa customer", key="nama1")
-                        no_hp = st.number_input("no hp", key="nama2")
-                        barang = st.text_input("nama barang", key="nama3")
-                        jumlah_barang = st.number_input("jumlah barang", key="nama4")
-                    with col2:
-                        alamat = st.text_area("alamat", key="nama5")
-                        kota = st.text_input("kota", key="nama6")
-                        ekspedisi = st.selectbox("pilih ekspedisi", eks_choice, key="nama7")
-                        metode_pem = st.selectbox("pilih pembayaran", metode_choice, key="nama8")
-                        status = st.selectbox("status orderan", status_choice, key="nama9")
-                if status == "dikirim nanti":
-                        harga_barang = st.number_input("harga barang awal", key="nama11")
-                        diskon = st.number_input("jumlah diskon", key="nama12")
-                        ongkir = st.number_input("biaya ongkir", key="nama13")
-                        update_harga = harga_barang+ongkir-diskon
-                        harga_akhir = st.number_input("harga akhir", key="nama14")
-                        closing_by = st.selectbox("closing by", cs_by, key="nama15")
-                        tanggal = datetime.datetime.now()
-                elif status == "dikirim nanti":
-                        harga_barang = st.number_input("harga barang awal")
-                        diskon = st.number_input("jumlah diskon")
-                        ongkir = st.number_input("biaya ongkir")
-                        update_harga = harga_barang+ongkir-diskon
-                        harga_akhir = st.number_input("harga akhir")
-                        closing_by = st.selectbox("closing by", cs_by)
-                if st.button("submit"):
+                with col1:
+                    nama = st.text_input("nama customer")
+                    nama_wa = st.text_input("nama wa customer")
+                    no_hp = st.number_input("no hp")
+                    barang = st.text_input("nama barang")
+                    jumlah_barang = st.number_input("jumlah barang")
+                with col2:
+                    alamat = st.text_area("alamat")
+                    kota = st.text_input("kota")
+                    ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                    metode_pem = st.selectbox("pilih pembayaran", metode_choice)
+                status = st.selectbox("status orderan", status_choice)
+                harga_barang = st.number_input("harga barang awal")
+                diskon = st.number_input("jumlah diskon")
+                ongkir = st.number_input("biaya ongkir")
+                update_harga = harga_barang+ongkir-diskon
+                harga_akhir = st.number_input("harga akhir")
+                closing_by = st.selectbox("closing by", cs_by)
+                tanggal = datetime.datetime.now()
+                if st.form_submit_button("submit"):
                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                     doc_input.set({
                             "nama": nama,
