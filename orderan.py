@@ -31,8 +31,8 @@ if modal.is_open():
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
                 nama = st.text_input("nama customer")
-                nama_wa = st.number_input("nama wa customer")
-                no_hp = st.text_input("no hp")
+                nama_wa = st.text_input("nama wa customer")
+                no_hp = st.number_input("no hp")
                 alamat = st.text_area("alamat")
                 kota = st.text_input("kota")
                 barang = st.text_input("nama barang")
