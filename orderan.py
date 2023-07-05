@@ -28,7 +28,6 @@ if open_modal:
 
 
 if modal.is_open():
-    with modal.container():
         with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
