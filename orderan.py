@@ -1,3 +1,4 @@
+import bootstrap4 as bs
 import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
@@ -5,6 +6,12 @@ import datetime
 import streamlit as st
 import streamlit_modal as modal
 from google.cloud import firestore
+
+dial = st.dialog("Warning")
+dial.write("Here's a warning!")
+
+if st.button("Show warning"):
+    dial.open()
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
@@ -65,6 +72,17 @@ with cs:
                     with c3:
                         st.write("")
                  
+                with st.container():
+                    col1,col2,col3,col4 = st.columns(4)
+                    with col1:
+                        st.write("")
+                    with col2:
+                        st.write("")
+                    with col3:
+                        st.write("")
+                    with col4:
+                        min_date = datetime.datetime(2023,7,5)
+                        max_date = datetime.date(2023,12,31)
             
             with st.form("Masukkan orderan"):
                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
