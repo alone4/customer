@@ -20,7 +20,7 @@ cs_by = ["salma","alya","salsa","intan"]
 
 
 def form_Wa():
-                with st.form("Masukkan orderan"):
+                    st.form("Masukkan orderan")
                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                     if check == "belum":
                         col1,col2= st.columns(2)
