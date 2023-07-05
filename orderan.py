@@ -1,36 +1,51 @@
+import bootstrap4 as bs
 import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
 import datetime
 import streamlit as st
 import streamlit_modal as modal
+import streamlit.components.v1 as components
 from google.cloud import firestore
 
-def dialog_close_button_clicked():
-    st.write("###  Dialog close callback results:")
-    st.write("#### No preferences saved!")
-    dialog.close()
-
-dialog = st.dialog(
-    "first_dialog_with_help", title="Introduce yourself",
-    on_close_button_clicked=dialog_close_button_clicked, can_be_closed=True)
-
-def dialog_form_submit_button_clicked():
-    st.write("### Dialog form submit button clicked results:")
-    st.write(f"#### Hey {st.session_state.first_name} {st.session_state.last_name}!")
-    st.write(f"#### Your preferences are saved")
-    dialog.close()
-
-
-with dialog:
-    st.text_input("First name", key="first_name")
-    st.text_input("Last name", key="last_name")
-    st.checkbox("I accept cookies", key="cookies")
-    st.form_submit_button("OK", on_click=dialog_form_submit_button_clicked)
-
-
-if st.button("Open dialog", key="first_dialog_button"):
-    dialog.open()
+components.html(
+    """
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Collapsible Group Item #1
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            Collapsible Group Item #1 content
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Collapsible Group Item #2
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            Collapsible Group Item #2 content
+          </div>
+        </div>
+      </div>
+    </div>
+    """,
+    height=600,
+)
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 
