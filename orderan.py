@@ -41,10 +41,7 @@ with cs:
             co1,co2,co3 = st.columns(3)
             with co1:
                  st.title("Jumlah Orderan")
-                 st.markdown=(f""" <div class="row align-items-center">
-    <div class="col">
-      8
-    </div>""")
+                 st.markdown=(f""" <div class="align-self-center">8</div>""")
             with co2:
                  st.title("Belum Bayar (TF)")
             with co3:
