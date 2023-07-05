@@ -10,7 +10,19 @@ st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 
 def align_center():
-     return """<div class="align-self-center">8 </div>"""
+     return """<<div class="container">
+  <div class="row">
+    <div class="col">
+      First in DOM, no order applied
+    </div>
+    <div class="col order-5">
+      Second in DOM, with a larger order
+    </div>
+    <div class="col order-1">
+      Third in DOM, with an order of 1
+    </div>
+  </div>
+</div>"""
 # Authenticate to Firestore with the JSON account key.
 db = firestore.Client.from_service_account_json("firestore-key.json")
 
@@ -38,14 +50,8 @@ with cs:
 
                 a_date = st.date_input("Pilih tanggal", (min_date, max_date))
 
-            co1,co2,co3 = st.columns(3)
-            with co1:
-                 st.title("Jumlah Orderan")
-                 st.markdown(align_center, unsafe_allow_html=True)
-            with co2:
-                 st.title("Belum Bayar (TF)")
-            with co3:
-                 st.title("Orderan Pending")
+            st.markdown(align_center, unsafe_allow_html=True)
+
             
             with st.form("Masukkan orderan"):
                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
