@@ -34,14 +34,14 @@ if modal.is_open():
                 col1,col2= st.columns(2)
                 while True:
                     with col1:
-                        nama = st.text_input("nama customer", key="str")
-                        nama_wa = st.text_input("nama wa customer", key="str")
-                        no_hp = st.number_input("no hp", key="str")
-                        barang = st.text_input("nama barang", key="str")
-                        jumlah_barang = st.number_input("jumlah barang", key="str")
+                        nama = st.text_input("nama customer", key="nama")
+                        nama_wa = st.text_input("nama wa customer", key="nama1")
+                        no_hp = st.number_input("no hp", key="nama2")
+                        barang = st.text_input("nama barang", key="nama2")
+                        jumlah_barang = st.number_input("jumlah barang", key="nama3")
                     with col2:
-                        alamat = st.text_area("alamat", key="str")
-                        kota = st.text_input("kota", key="str")
+                        alamat = st.text_area("alamat", key="nama3")
+                        kota = st.text_input("kota")
                         ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                         metode_pem = st.selectbox("pilih pembayaran", metode_choice)
                 status = st.selectbox("status orderan", status_choice)
