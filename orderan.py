@@ -75,8 +75,8 @@ with cs:
                     with col4:
                         min_date = datetime.datetime(2023,7,5)
                         max_date = datetime.date(2023,12,31)
-            
-            with st.form("Masukkan orderan"):
+            with st.expander():
+                with st.form("Masukkan orderan"):
                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                     if check == "belum":
                         col1,col2= st.columns(2)
