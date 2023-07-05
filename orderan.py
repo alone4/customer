@@ -21,11 +21,6 @@ cs_by = ["salma","alya","salsa","intan"]
 # Create a reference to the Google post.
 # Let's see what we got!
 modal = Modal(key="Demo Modal", title="")
-for x,y in zip(nama,no) :
-    p[f"data{o}"]= {'nama': x,'no': y}
-    o += 1
-    l['data'] = p
-
 open_modal = st.button("Open")
 if open_modal:
     modal.open()
