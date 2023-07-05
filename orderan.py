@@ -3,12 +3,20 @@ import streamlit as st
 from streamlit.web import bootstrap
 import datetime
 import streamlit as st
-import streamlit_modal as modal
+import streamlit_modal as Modal
 import streamlit.components.v1 as components
 from google.cloud import firestore
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
+
+db = firestore.Client.from_service_account_json("firestore-key.json")
+eks_choice = ["SAP","JNE"]
+metode_choice = ["COD","TRANSFER"]
+status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pending", "Proses", "Cancel"]
+cs_by = ["salma","alya","salsa","intan"]
+# Create a reference to the Google post.
+# Let's see what we got!
 
 modal = Modal("Demo Modal")
 open_modal = st.button("Open")
@@ -32,13 +40,7 @@ if modal.is_open():
         value = st.checkbox("Check me")
         st.write(f"Checkbox checked: {value}")
 
-db = firestore.Client.from_service_account_json("firestore-key.json")
-eks_choice = ["SAP","JNE"]
-metode_choice = ["COD","TRANSFER"]
-status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pending", "Proses", "Cancel"]
-cs_by = ["salma","alya","salsa","intan"]
-# Create a reference to the Google post.
-# Let's see what we got!
+
 cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
