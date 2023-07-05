@@ -29,7 +29,6 @@ if open_modal:
 
 if modal.is_open():
     with modal.container():
-        with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
                 col1,col2= st.columns(2)
@@ -61,7 +60,7 @@ if modal.is_open():
                         update_harga = harga_barang+ongkir-diskon
                         harga_akhir = st.number_input("harga akhir")
                         closing_by = st.selectbox("closing by", cs_by)
-                if st.form_submit_button("submit"):
+                if st.button("submit"):
                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                     doc_input.set({
                             "nama": nama,
