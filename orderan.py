@@ -21,8 +21,7 @@ cs_by = ["salma","alya","salsa","intan"]
 # Let's see what we got!
 cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
-        st.header("CS")
-        orderan,wa_masuk,fu,ro,barang= st.tabs(4)
+        orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
         with orderan:
             st.header("Orderan")
             col1,col2,col3,col4 = st.columns(4)
