@@ -2,13 +2,15 @@ import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
 import datetime
+import streamlit as st
+from google.cloud import firestore
+
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 
 st.write("click di bawah untuk memilih memasukkan orderan")
 
-import streamlit as st
-from google.cloud import firestore
-
+def align_center():
+     return """<div class="align-self-center">8 </div>"""
 # Authenticate to Firestore with the JSON account key.
 db = firestore.Client.from_service_account_json("firestore-key.json")
 
@@ -39,7 +41,7 @@ with cs:
             co1,co2,co3 = st.columns(3)
             with co1:
                  st.title("Jumlah Orderan")
-                 bootstrap.run(f""" <div class="align-self-center">8 </div>""")
+                 st.markdown(align_center, unsafe_allow_html=True)
             with co2:
                  st.title("Belum Bayar (TF)")
             with co3:
