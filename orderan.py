@@ -5,13 +5,8 @@ import datetime
 import streamlit as st
 import streamlit_modal as modal
 from google.cloud import firestore
-BOOTSTRAP = ("""  <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>"""
-)
-st.markdown(BOOTSTRAP,unsafe_allow_html=True)
-st.title("Selamat datang apa yang anda perlukan hari ini?")
 
+st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 
 def align_center():
