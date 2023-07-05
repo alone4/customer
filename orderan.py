@@ -63,15 +63,3 @@ if modal.is_open():
                             "harga_akhir": harga_akhir,
                             "closing_by": closing_by
                 })
-            else:
-                pilih = st.selectbox('pilih nama orang', l.get('data'))
-                for x,y in p.get(pilih).items():
-                    if y == p.get(pilih)["nama"]:
-                        nama = st.text_input("nama customer", value=y, disabled=True)
-                    if y == p.get(pilih)["no"]:
-                        now = st.text_input("no hp", value=y, disabled=True)
-                option = st.selectbox("Barang", l1)
-
-            if st.button("Submit"):
-                p["data3"] = {'nama': nama,'no': now, 'barang': option}
-            st.write(p)
