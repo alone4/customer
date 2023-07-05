@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit.web import bootstrap
 import datetime
 import streamlit as st
-import streamlit_modal as modal
+import streamlit_modal as Modal
 import streamlit.components.v1 as components
 from CO import *
 from google.cloud import firestore
