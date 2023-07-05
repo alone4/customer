@@ -39,11 +39,11 @@ with cs:
             with st.container():
                 col1,col2,col3 = st.columns(3)
                 with col1:
-                    st.title("Jumlah Orderan")
+                    st.subheader("Jumlah Orderan")
                 with col2:
                     st.title("Belum Transfer")
                 with col3:
-                    st.write("Orderan Pending")
+                    st.title("Orderan Pending")
                  
             
             with st.form("Masukkan orderan"):
