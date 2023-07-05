@@ -1,9 +1,7 @@
 import pandas as pd
 import streamlit as st
-from streamlit_modal import Modal
-import streamlit.components.v1 as components
+from streamlit.web import bootstrap
 import datetime
-st.markdown("""<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>""", unsafe_allow_html=True)
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 
 st.write("click di bawah untuk memilih memasukkan orderan")
@@ -41,7 +39,7 @@ with cs:
             co1,co2,co3 = st.columns(3)
             with co1:
                  st.title("Jumlah Orderan")
-                 st.markdown=(f""" <div class="align-self-center">8 </div>""")
+                 bootstrap(f""" <div class="align-self-center">8 </div>""")
             with co2:
                  st.title("Belum Bayar (TF)")
             with co3:
