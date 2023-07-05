@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-from st_bridge import bridge, html
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 import datetime
