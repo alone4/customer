@@ -5,11 +5,20 @@ import datetime
 import streamlit as st
 import streamlit_modal as Modal
 import streamlit.components.v1 as components
+from CO import *
 from google.cloud import firestore
 
-st.title("Selamat datang apa yang anda perlukan hari ini?")
-st.write("click di bawah untuk memilih memasukkan orderan")
 
+modal = Modal(key="Demo Modal" ,title="")
+open_modal = st.button("Open")
+if open_modal:
+    modal.open()
+
+if modal.is_open():
+    with modal.container():
+        st.title("Selamat datang apa yang anda perlukan hari ini?")
+st.write("click di bawah untuk memilih memasukkan orderan")
+# Authenticate to Firestore with the JSON account key.
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
 metode_choice = ["COD","TRANSFER"]
@@ -17,30 +26,6 @@ status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pendi
 cs_by = ["salma","alya","salsa","intan"]
 # Create a reference to the Google post.
 # Let's see what we got!
-
-order = Modal(key="Demo Modal", title="order")
-open_order = st.button("Open")
-if open_order:
-    order.open()
-
-if order.is_open():
-    with order.container():
-        st.write("Text goes here")
-
-        html_string = '''
-        <h1>HTML string in RED</h1>
-
-        <script language="javascript">
-          document.querySelector("h1").style.color = "red";
-        </script>
-        '''
-        components.html(html_string)
-
-        st.write("Some fancy text")
-        value = st.checkbox("Check me")
-        st.write(f"Checkbox checked: {value}")
-
-
 cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
@@ -101,7 +86,7 @@ with cs:
                         max_date = datetime.date(2023,12,31)
             
             with st.form("Masukkan orderan"):
-                    check = st.radio("apakah customer sudah pernah membeli?", ("belum","sudah"))
+                    check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                     if check == "belum":
                         col1,col2= st.columns(2)
                         with col1:
@@ -123,7 +108,7 @@ with cs:
 
                                 peng = st.selectbox("apakah dikirim nanti?", ["ya","tidak"])
                                 if metode_pem == "TRANSFER" and peng == "ya":
-                
+                                    with modal.container():
                                         with st.form("Masukkan orderan"):
                                             status = st.selectbox("status orderan", status_choice[0,1,2])
                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
