@@ -77,9 +77,29 @@ with cs:
                         min_date = datetime.datetime(2023,7,5)
                         max_date = datetime.date(2023,12,31)
             
-                modal_type_2(form_Wa)
-                peng = st.selectbox("apakah dikirim nanti?", ["ya","tidak"])
-                if metode_pem == "TRANSFER" and peng == "ya":
+            with st.form("Masukkan orderan"):
+                    check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
+                    if check == "belum":
+                        col1,col2= st.columns(2)
+                        with col1:
+                            nama = st.text_input("nama customer")
+                            nama_wa = st.text_input("nama wa customer")
+                            no_hp = st.number_input("no hp")
+                        with col2:
+                            alamat = st.text_area("alamat")
+                            kota = st.text_input("kota")
+                            metode_pem = st.selectbox("pilih pembayaran", metode_choice)
+                        if st.form_submit_button("submit"):
+                                doc_input = db.collection("customer").document(nama_wa)
+                                doc_input.set({
+                                    "nama": nama,
+                                    "no_telp": no_hp,
+                                    "alamat": alamat,
+                                    "kota": kota
+                                })
+
+                                peng = st.selectbox("apakah dikirim nanti?", ["ya","tidak"])
+                                if metode_pem == "TRANSFER" and peng == "ya":
                                     with modal.container():
                                         with st.form("Masukkan orderan"):
                                             status = st.selectbox("status orderan", status_choice[0,1,2])
