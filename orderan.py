@@ -26,11 +26,11 @@ with cs:
             st.header("Orderan")
             col1,col2,col3,col4 = st.columns(4)
             with col1:
-                 pass
+                 st.write("")
             with col2:
-                 pass
+                 st.write("")
             with col3:
-                 pass
+                 st.write("")
             with col1:
                 min_date = datetime.datetime(2020,1,1)
                 max_date = datetime.date(2022,1,1)
