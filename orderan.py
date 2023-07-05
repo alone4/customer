@@ -25,8 +25,8 @@ open_modal = st.button("Open")
 if open_modal:
     modal.open()
 
-if st.dialog():
-            st.write("Masukkan orderan")
+if modal.is_open():
+    with st.form("Masukkan orderan"):
             check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
             if check == "belum":
                 nama = st.text_input("nama customer")
@@ -45,7 +45,7 @@ if st.dialog():
                 harga_akhir = st.number_input("harga akhir")
                 closing_by = st.selectbox("closing by", cs_by)
                 tanggal = datetime.datetime.now()
-                if st.button("submit"):
+                if st.form_submit_button("submit"):
                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                     doc_input.set({
                             "nama": nama,
