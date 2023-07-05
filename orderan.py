@@ -31,7 +31,7 @@ with cs:
                  st.write("")
             with col3:
                  st.write("")
-            with col1:
+            with col4:
                 min_date = datetime.datetime(2020,1,1)
                 max_date = datetime.date(2022,1,1)
 
