@@ -3,9 +3,7 @@ import streamlit as st
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 import datetime
-from CO import *
-
-bootsrap
+st.markdown("""<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">""", unsafe_allow_html=True)
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 
 st.write("click di bawah untuk memilih memasukkan orderan")
