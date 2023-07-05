@@ -23,7 +23,7 @@ with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
         with orderan:
             st.header("Orderan")
-            with st.container:
+            with st.container():
                 col1,col2,col3,col4 = st.columns(4)
                 with col1:
                     st.write("")
@@ -36,7 +36,7 @@ with cs:
                     max_date = datetime.date(2023,12,31)
 
                     a_date = st.date_input("Pilih tanggal", (min_date, max_date))
-            with st.container:
+            with st.container():
                 col1,col2,col3 = st.columns(3)
                 with col1:
                     st.title("Jumlah Orderan")
