@@ -4,7 +4,6 @@ from streamlit.web import bootstrap
 import datetime
 import streamlit as st
 import streamlit.components.v1 as components
-from pages.CO import *
 from google.cloud import firestore
 st.set_page_config(initial_sidebar_state="collapsed") 
 st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
