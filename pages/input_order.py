@@ -40,7 +40,8 @@ with st.form("Masukkan orderan"):
                                                 "kota": kota
                                             })
                                         peng= st.radio("apakah dikirim nanti?", ["ya","tidak"])
-                                        while metode_pem == "TRANSFER" and peng == "tidak":
+                                        if metode_pem == "TRANSFER" and peng == "tidak":
+                                                        op = nama
                                                         jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                         barang = st.text_input("nama barang")
                                                         jumlah_barang = st.number_input("jumlah barang")
