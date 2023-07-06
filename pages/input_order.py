@@ -79,3 +79,5 @@ if metode_pem == "TRANSFER" and peng == "tidak":
                                                                     "harga_akhir": harga_akhir,
                                                                     "closing_by": closing_by
                                                         })
+                                                            st.success("data berhasil di masukkan")
+                                                            switch_page("orderan")
