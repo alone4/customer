@@ -6,13 +6,11 @@ import sys
 import datetime
 import streamlit.components.v1 as components
 from google.cloud import firestore
-
 import os
-st.write(os.getcwd())
-
 os.chdir('pages')
 
 st.write(os.getcwd())
+from input_order import *
 
 hides_side_page()
 
