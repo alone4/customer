@@ -2,10 +2,13 @@
 import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
+import sys
 import datetime
 import streamlit.components.v1 as components
 from google.cloud import firestore
-from input_order import *
+from .input_order import *
+
+sys.path.insert
 
 hides_side_page()
 
