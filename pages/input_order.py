@@ -7,8 +7,6 @@ import streamlit.components.v1 as components
 from pages.input_order import *
 from google.cloud import firestore
 
-st.set_page_config(initial_sidebar_state="collapsed") 
-st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 st.title("masukkan orderan")
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
