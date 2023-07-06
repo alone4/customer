@@ -11,7 +11,7 @@ import os
 st.write(os.getcwd())
 
 sys.path.append('/pages')
-
+os.chdir('/pages')
 
 st.write(os.getcwd())
 
