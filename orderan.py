@@ -77,5 +77,5 @@ with cs:
                         min_date = datetime.datetime(2023,7,5)
                         max_date = datetime.date(2023,12,31)
 
-                with st.expander("masukkan orderan"):       
+                if st.button("masukkan orderan"):       
                     switch_page("CO.py")
