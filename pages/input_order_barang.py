@@ -6,6 +6,7 @@ import datetime
 import streamlit.components.v1 as components
 from google.cloud import firestore
 from input_order import *
+
 hides_side_page()
 
 peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
