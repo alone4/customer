@@ -8,6 +8,7 @@ from streamlit_extras.switch_page_button import switch_page
 from google.cloud import firestore
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
+
 # Authenticate to Firestore with the JSON account key.
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
@@ -76,4 +77,4 @@ with cs:
                         max_date = datetime.date(2023,12,31)
 
                 if st.button("masukkan orderan"):       
-                    switch_page('CO.py')
+                    switch_page('input_order')

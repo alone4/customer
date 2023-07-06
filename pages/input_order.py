@@ -4,7 +4,7 @@ from streamlit.web import bootstrap
 import datetime
 import streamlit as st
 import streamlit.components.v1 as components
-from pages.CO import *
+from pages.input_order import *
 from google.cloud import firestore
 
 st.title("masukkan orderan")
