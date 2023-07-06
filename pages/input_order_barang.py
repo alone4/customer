@@ -8,8 +8,6 @@ import streamlit.components.v1 as components
 from google.cloud import firestore
 from input_order import *
 import os
-db = firestore.Client.from_service_account_json("firestore-key.json")
-os.chdir("/app/customer/page")
 
 hides_side_page()
 
