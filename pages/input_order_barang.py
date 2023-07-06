@@ -10,8 +10,7 @@ from google.cloud import firestore
 import os
 st.write(os.getcwd())
 
-sys.path.append('/pages')
-os.chdir('/pages')
+os.chdir('pages')
 
 st.write(os.getcwd())
 
