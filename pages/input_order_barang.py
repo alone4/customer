@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 from google.cloud import firestore
 from input_order import jenis_order_choice,status_orderan_choice,status_pembayaran_choice,eks_choice,nama,alamat,no_hp,cs_by,nama_wa,metode_choice,metode_pem,kota,hides_side_page
 import os
-st.write(os.getcwd)
+os.chdir("../")
 db = firestore.Client.from_service_account_json("firestore-key.json")
 hides_side_page()
 
