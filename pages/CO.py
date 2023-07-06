@@ -4,12 +4,10 @@ from streamlit.web import bootstrap
 import datetime
 import streamlit as st
 import streamlit.components.v1 as components
-from CO import *
+from pages.CO import *
 from google.cloud import firestore
 
-st.title("Selamat datang apa yang anda perlukan hari ini?")
-st.write("click di bawah untuk memilih memasukkan orderan")
-# Authenticate to Firestore with the JSON account key.
+st.title("masukkan orderan")
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
 metode_choice = ["COD","TRANSFER"]
