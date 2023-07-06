@@ -41,7 +41,6 @@ with placeholder.container():
                                                 "alamat": alamat,
                                                 "kota": kota
                                             })
-                                        switch_page('input_order_barang')
                                         placeholder.empty()
 
 peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
