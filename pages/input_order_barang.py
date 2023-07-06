@@ -8,6 +8,7 @@ import streamlit.components.v1 as components
 from google.cloud import firestore
 import os
 
+sys.path.append('pages')
 os.chdir('pages')
 
 st.write(os.getcwd())
