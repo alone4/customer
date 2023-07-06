@@ -14,7 +14,9 @@ st.title("masukkan orderan")
 db = firestore.Client.from_service_account_json("firestore-key.json")
 eks_choice = ["SAP","JNE"]
 metode_choice = ["COD","TRANSFER"]
-status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pending", "Proses", "Cancel"]
+status_orderan_choice = [ "Pending", "Proses", "Cancel"]
+status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
+jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
 
 with st.form("Masukkan orderan"):
@@ -37,18 +39,19 @@ with st.form("Masukkan orderan"):
                                                 "alamat": alamat,
                                                 "kota": kota
                                             })
-                                        peng= st.selectbox("apakah dikirim nanti?", ["ya","tidak"])
-                                        if metode_pem == "TRANSFER" and peng == "ya":
-                                                    status = st.selectbox("status orderan", status_choice[0,1,2])
-                                                    ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                                        peng= st.radio("apakah dikirim nanti?", ["ya","tidak"])
+                                        if metode_pem == "TRANSFER" and peng == "tidak":
+                                                    jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                     barang = st.text_input("nama barang")
                                                     jumlah_barang = st.number_input("jumlah barang")
-                                                    status = st.selectbox("status orderan", status_choice)
+                                                    status_orderan = "pending"
+                                                    status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                    ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                     harga_barang = st.number_input("harga barang awal")
                                                     diskon = st.number_input("jumlah diskon")
                                                     ongkir = st.number_input("biaya ongkir")
                                                     update_harga = harga_barang+ongkir-diskon
-                                                    harga_akhir = st.number_input("harga akhir")
+                                                    harga_akhir = st.number_input("harga akhir", value=update_harga)
                                                     closing_by = st.selectbox("closing by", cs_by)
                                                     tanggal = datetime.datetime.now()
 
@@ -59,11 +62,13 @@ with st.form("Masukkan orderan"):
                                                                 "no_telp": no_hp,
                                                                 "alamat": alamat,
                                                                 "kota": kota,
+                                                                "metode pembayaran": metode_pem,
+                                                                "jenis_order": jenis_order,
                                                                 "barang": barang,
                                                                 "jumlah_barang": jumlah_barang,
                                                                 "ekspedisi": ekspedisi,
-                                                                "metode pembayaran": metode_pem,
-                                                                "status": status,
+                                                                "status_orderan": status_orderan,
+                                                                "status_pembayaran": status_pembayaran,
                                                                 "harga_barang": harga_barang,
                                                                 "diskon": diskon,
                                                                 "ongkir": ongkir,
