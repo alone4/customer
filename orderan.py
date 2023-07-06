@@ -6,8 +6,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_extras.switch_page_button import switch_page
 from google.cloud import firestore
-st.set_page_config(initial_sidebar_state="collapsed") 
-st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 # Authenticate to Firestore with the JSON account key.
@@ -78,4 +76,4 @@ with cs:
                         max_date = datetime.date(2023,12,31)
 
                 if st.button("masukkan orderan"):       
-                    switch_page("CO.py")
+                    switch_page('CO.py')
