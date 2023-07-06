@@ -19,8 +19,9 @@ status_orderan_choice = [ "Pending", "Proses", "Cancel"]
 status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
 jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
-
-with st.form("Masukkan orderan"):
+placeholder = st.empty()
+with placeholder.container():
+    with st.form("Masukkan orderan"):
                                 check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                 if check == "belum":
                                     col1,col2= st.columns(2)
@@ -41,3 +42,41 @@ with st.form("Masukkan orderan"):
                                                 "kota": kota
                                             })
                                         switch_page('input_order_barang')
+                                        placeholder.empty()
+
+peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
+if metode_pem == "TRANSFER" and peng == "tidak":
+                                                        op = nama
+                                                        jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
+                                                        barang = st.text_input("nama barang")
+                                                        jumlah_barang = st.number_input("jumlah barang")
+                                                        status_orderan = "pending"
+                                                        status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                        ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                                                        harga_barang = st.number_input("harga barang awal")
+                                                        diskon = st.number_input("jumlah diskon")
+                                                        ongkir = st.number_input("biaya ongkir")
+                                                        update_harga = harga_barang+ongkir-diskon
+                                                        harga_akhir = st.number_input("harga akhir", value=update_harga)
+                                                        closing_by = st.selectbox("closing by", cs_by)
+                                                        tanggal = datetime.datetime.now()
+                                                        if st.button("submit"):
+                                                            doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                                                            doc_input.set({
+                                                                    "nama": nama,
+                                                                    "no_telp": no_hp,
+                                                                    "alamat": alamat,
+                                                                    "kota": kota,
+                                                                    "metode pembayaran": metode_pem,
+                                                                    "jenis_order": jenis_order,
+                                                                    "barang": barang,
+                                                                    "jumlah_barang": jumlah_barang,
+                                                                    "ekspedisi": ekspedisi,
+                                                                    "status_orderan": status_orderan,
+                                                                    "status_pembayaran": status_pembayaran,
+                                                                    "harga_barang": harga_barang,
+                                                                    "diskon": diskon,
+                                                                    "ongkir": ongkir,
+                                                                    "harga_akhir": harga_akhir,
+                                                                    "closing_by": closing_by
+                                                        })
