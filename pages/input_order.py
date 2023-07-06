@@ -40,4 +40,4 @@ with st.form("Masukkan orderan"):
                                                 "alamat": alamat,
                                                 "kota": kota
                                             })
-                                        switch_page('input_order')
+                                        switch_page('input_order_barang')
