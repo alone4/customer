@@ -1,14 +1,14 @@
+def hides_side_page():
+    st.set_page_config(initial_sidebar_state="collapsed") 
+    st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
+
+hides_side_page()
 import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
 import datetime
 import streamlit.components.v1 as components
 from google.cloud import firestore
-def hides_side_page():
-    st.set_page_config(initial_sidebar_state="collapsed") 
-    st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
-
-hides_side_page()
 
 
 
