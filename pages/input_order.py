@@ -51,8 +51,6 @@ def input_pertama():
                                             
                                             
 def input_kedua(x):
-        
-            pengiriman = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
             if x == "TRANSFER" and pengiriman == "tidak":
                                                                     
                                                                         col1,col2 = st.columns(2)
