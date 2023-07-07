@@ -25,7 +25,7 @@ game = False
 def input_pertama():
     placeholder = st.empty()
     with placeholder.container():
-                                    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman, game
+                                    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                     if check == "belum":
                                         col1,col2= st.columns(2)
@@ -47,11 +47,10 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            game = True
+                                            return pengiriman,metode_pem
+input_pertama()                                           
                                             
-                                            
-def input_kedua(x,y):
-            if x == "TRANSFER" and y == "tidak":
+while metode_pem== "TRANSFER" and pengiriman == "tidak":
                                                                     
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
@@ -90,7 +89,7 @@ def input_kedua(x,y):
                                                                         })
                                                                         st.success("data berhasil di masukkan")
                                                                         switch_page("orderan")
-            elif x == "TRANSFER" and y == "ya":
+while metode_pem== "TRANSFER" and pengiriman == "ya":
                                                                     
                                                                         col1,col2 = st.columns(2)
                                                                         
@@ -133,7 +132,7 @@ def input_kedua(x,y):
                                                                         })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-            elif x == "COD" and y == "tidak":
+while metode_pem== "COD" and pengiriman == "tidak":
                                                                    
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
@@ -171,7 +170,7 @@ def input_kedua(x,y):
                                                                         })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-            elif x == "COD" and y == "ya":
+while metode_pem== "COD" and pengiriman == "ya":
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -209,6 +208,3 @@ def input_kedua(x,y):
                                                                         })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-input_pertama()
-while game == True:
-    input_kedua(metode_pem,pengiriman)
