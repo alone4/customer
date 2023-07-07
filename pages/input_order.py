@@ -174,6 +174,7 @@ def input_kedua():
                                                                             with col1:
                                                                                 jenis_order = st.selectbox(key=("streamlit kkontolllllllllllllll"),label="Jenis orderan", options=jenis_order_choice)
                                                                                 status_orderan = "pending"
+                                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
                                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                                             with col2:
                                                                                 barang = st.text_input("nama barang")
