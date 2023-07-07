@@ -24,7 +24,7 @@ cs_by = ["salma","alya","salsa","intan"]
 def input_pertama():
     placeholder = st.empty()
     with placeholder.container():
-                                    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman
+                                    global nama,nama_wa,metode_pembayaran,kota,alamat,no_hp,pengiriman
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                     if check == "belum":
                                         col1,col2= st.columns(2)
@@ -35,7 +35,7 @@ def input_pertama():
                                         with col2:
                                             alamat = st.text_area("alamat")
                                             kota = st.text_input("kota")
-                                            metode_pem = st.selectbox("pilih pembayaran", metode_choice)
+                                            metode_pembayaran = st.selectbox("pilih pembayaran", metode_choice)
                                         pengiriman = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
                                         if st.button("next"):
                                             doc_input = db.collection("customer").document(nama_wa)
@@ -46,12 +46,11 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            
-                                        return input_kedua(metode_pem,pengiriman)
+
 
                                             
-def input_kedua(x,y):
-        if x == "TRANSFER" and y == "tidak":
+
+if metode_pembayaran == "TRANSFER" and pengiriman == "tidak":
                                                                 col1,col2 = st.columns(2)
                                                                 with col1:
                                                                     jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -74,7 +73,7 @@ def input_kedua(x,y):
                                                                             "no_telp": no_hp,
                                                                             "alamat": alamat,
                                                                             "kota": kota,
-                                                                            "metode pembayaran": metode_pem,
+                                                                            "metode pembayaran": metode_pembayaran,
                                                                             "jenis_order": jenis_order,
                                                                             "barang": barang,
                                                                             "jumlah_barang": jumlah_barang,
@@ -88,7 +87,7 @@ def input_kedua(x,y):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
-        elif x == "TRANSFER" and y == "ya":
+elif metode_pembayaran == "TRANSFER" and pengiriman == "ya":
                                                                 col1,col2 = st.columns(2)
 
                                                                 with col1:
@@ -113,7 +112,7 @@ def input_kedua(x,y):
                                                                             "no_telp": no_hp,
                                                                             "alamat": alamat,
                                                                             "kota": kota,
-                                                                            "metode pembayaran": metode_pem,
+                                                                            "metode pembayaran": metode_pembayaran,
                                                                             "jenis_order": jenis_order,
                                                                             "tanggal_pengiriman": tanggal_pengiriman,
                                                                             "barang": barang,
@@ -128,7 +127,7 @@ def input_kedua(x,y):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
-        elif x == "COD" and y == "tidak":
+elif metode_pembayaran == "COD" and pengiriman == "tidak":
                                                                 col1,col2 = st.columns(2)
                                                                 with col1:
                                                                     jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -150,13 +149,12 @@ def input_kedua(x,y):
                                                                             "no_telp": no_hp,
                                                                             "alamat": alamat,
                                                                             "kota": kota,
-                                                                            "metode pembayaran": metode_pem,
+                                                                            "metode pembayaran": metode_pembayaran,
                                                                             "jenis_order": jenis_order,
                                                                             "barang": barang,
                                                                             "jumlah_barang": jumlah_barang,
                                                                             "ekspedisi": ekspedisi,
                                                                             "status_orderan": status_orderan,
-                                                                            "status_pembayaran": status_pembayaran,
                                                                             "harga_barang": harga_barang,
                                                                             "diskon": diskon,
                                                                             "ongkir": ongkir,
@@ -164,7 +162,7 @@ def input_kedua(x,y):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
-        elif x == "COD" and y == "ya":
+elif metode_pembayaran == "COD" and pengiriman == "ya":
                                                                 col1,col2 = st.columns(2)
                                                                 op = nama
                                                                 with col1:
@@ -188,7 +186,7 @@ def input_kedua(x,y):
                                                                             "no_telp": no_hp,
                                                                             "alamat": alamat,
                                                                             "kota": kota,
-                                                                            "metode pembayaran": metode_pem,
+                                                                            "metode pembayaran": metode_pembayaran,
                                                                             "jenis_order": jenis_order,
                                                                             "status_orderan": status_orderan,
                                                                             "tanggal_pengiriman": tanggal_pengiriman,
