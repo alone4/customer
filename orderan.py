@@ -82,4 +82,4 @@ with cs:
                     st.write(f"{doc.id}")
                     users_ref1 = db.collection("customer").document(doc.id).collection("orderan")
                     docs1 = users_ref1.stream()
-                    st.write(docs1.id)
+                    st.write(docs1.to_dict())
