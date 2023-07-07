@@ -47,14 +47,14 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            return False
+                                            return game == True
                                                                                       
                                             
 def input_kedua():
                                                                     
                                                                         col1,col2 = st.columns(2)     
                                                                         with col1:
-                                                                            jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
+                                                                            jenis_order = st.selectbox(key=("1"),label="Jenis orderan", option=jenis_order_choice)
                                                                             status_orderan = "pending"
                                                                             if metode_pem == "TRANSFER":
                                                                                 status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
@@ -94,5 +94,5 @@ def input_kedua():
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
 input_pertama()
-while True:
+while game == True:
     input_kedua()
