@@ -70,16 +70,7 @@ with cs:
                     with c3:
                         st.write("")
                  
-                with st.container():
-                    col1,col2,col3,col4 = st.columns(4)
-                    with col1:
-                        st.write("")
-                    with col2:
-                        st.write("")
-                    with col3:
-                        st.write("")
-                    with col4:
-                            pass
+                
                 open_modal = st.button("Masukkan Orderan")
                 if open_modal:
                         order.open()
