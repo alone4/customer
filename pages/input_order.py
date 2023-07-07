@@ -93,6 +93,5 @@ def input_kedua():
                                                                         })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-input_pertama()
-while game == True:
-    input_kedua()
+
+input_kedua()
