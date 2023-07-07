@@ -10,7 +10,7 @@ from pages.input_order import *
 
 hides_side_page()
 
-order = Modal(key="order modal", title="input order")
+order = Modal(key="order modal", title="Input Order")
 open_modal = st.button("Open")
 if open_modal:
     order.open()

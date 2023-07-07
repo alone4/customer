@@ -21,9 +21,9 @@ status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
 jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
 
-
-placeholder = st.empty()
-with placeholder.container():
+def input_pertama():
+    placeholder = st.empty()
+    with placeholder.container():
             with st.form("Masukkan orderan"):
                                     global nama,nama_wa,no_hp,alamat,kota,metode_pem,peng
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
