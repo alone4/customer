@@ -79,7 +79,7 @@ with cs:
                 
 
                 for doc in docs:
-                    st.write(f"{doc.id} => {doc.to_dict().keys()}")
-                    users_ref1 = db.collection("customer").document(doc.id)
+                    st.write(f"{doc.id}")
+                    users_ref1 = db.collection("customer").document(doc.id).collection("orderan")
                     docs1 = users_ref1.stream()
                     st.write(docs1.id)
