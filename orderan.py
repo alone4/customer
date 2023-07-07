@@ -78,4 +78,4 @@ with cs:
                 docs = users_ref.stream()
 
                 for doc in docs:
-                    print(f"{doc.id} => {doc.to_dict()}")
+                    st.write(f"{doc.id} => {doc.to_dict()}")
