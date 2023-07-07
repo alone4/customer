@@ -48,9 +48,9 @@ def input_pertama():
                                                 })
                                             placeholder.empty()
                                             return pengiriman,metode_pem
-input_pertama()                                           
+                                     
 def input_kedua():                                            
-    if metode_pem== "TRANSFER" and pengiriman == "tidak":
+    while metode_pem== "TRANSFER" and pengiriman == "tidak":
                                                                         
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
@@ -89,7 +89,7 @@ def input_kedua():
                                                                             })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-    if metode_pem== "TRANSFER" and pengiriman == "ya":
+    while metode_pem== "TRANSFER" and pengiriman == "ya":
                                                                         
                                                                             col1,col2 = st.columns(2)
                                                                             
@@ -132,7 +132,7 @@ def input_kedua():
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
-    if metode_pem== "COD" and pengiriman == "tidak":
+    while metode_pem== "COD" and pengiriman == "tidak":
                                                                     
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
@@ -170,7 +170,7 @@ def input_kedua():
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
-    if metode_pem== "COD" and pengiriman == "ya":
+    while metode_pem== "COD" and pengiriman == "ya":
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
                                                                                 jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
@@ -207,3 +207,6 @@ def input_kedua():
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
+
+input_pertama()
+input_kedua
