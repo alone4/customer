@@ -21,11 +21,12 @@ status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
 jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
 
+
 def input_pertama():
-    placeholder = st.empty()
-    with placeholder.container():
-        with st.form("Masukkan orderan"):
-                                    global nama,nama_wa,no_hp,alamat,kota,metode_pem
+        placeholder = st.empty()
+        with placeholder.container():
+            with st.form("Masukkan orderan"):
+                                    global nama,nama_wa,no_hp,alamat,kota,metode_pem,peng
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                     if check == "belum":
                                         col1,col2= st.columns(2)
@@ -48,9 +49,10 @@ def input_pertama():
                                                 })
                                             placeholder.empty()
 
+                                            input_kedua(metode_pem, peng)
                                             
-
-                                            if metode_pem == "TRANSFER" and peng == "tidak":
+def input_kedua(x,y):
+                                            if x == "TRANSFER" and y == "tidak":
                                                             col1,col2 = st.columns(2)
                                                             with col1:
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -87,45 +89,7 @@ def input_pertama():
                                                                         "closing_by": closing_by
                                                             })
                                                                 st.success("data berhasil di masukkan")
-                                            elif metode_pem == "TRANSFER" and peng == "ya":
-                                                            col1,col2 = st.columns(2)
-                                                            op = nama
-                                                            with col1:
-                                                                jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
-                                                                status_orderan = "pending"
-                                                                status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                closing_by = st.selectbox("closing by", cs_by)
-                                                            with col2:
-                                                                barang = st.text_input("nama barang")
-                                                                jumlah_barang = st.number_input("jumlah barang")
-                                                                harga_barang = st.number_input("harga barang awal")
-                                                            ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                                                            diskon = st.number_input("jumlah diskon")
-                                                            ongkir = st.number_input("biaya ongkir")
-                                                            harga_akhir = harga_barang+ongkir-diskon
-                                                            tanggal = datetime.datetime.now()
-                                                            if st.button("submit"):
-                                                                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                                                                doc_input.set({
-                                                                        "nama": nama,
-                                                                        "no_telp": no_hp,
-                                                                        "alamat": alamat,
-                                                                        "kota": kota,
-                                                                        "metode pembayaran": metode_pem,
-                                                                        "jenis_order": jenis_order,
-                                                                        "barang": barang,
-                                                                        "jumlah_barang": jumlah_barang,
-                                                                        "ekspedisi": ekspedisi,
-                                                                        "status_orderan": status_orderan,
-                                                                        "status_pembayaran": status_pembayaran,
-                                                                        "harga_barang": harga_barang,
-                                                                        "diskon": diskon,
-                                                                        "ongkir": ongkir,
-                                                                        "harga_akhir": harga_akhir,
-                                                                        "closing_by": closing_by
-                                                            })
-                                                                st.success("data berhasil di masukkan")
-                                            elif metode_pem == "COD" and peng == "tidak":
+                                            elif x == "TRANSFER" and y == "ya":
                                                             col1,col2 = st.columns(2)
                                                             op = nama
                                                             with col1:
@@ -163,7 +127,45 @@ def input_pertama():
                                                                         "closing_by": closing_by
                                                             })
                                                                 st.success("data berhasil di masukkan")
-                                            elif metode_pem == "COD" and peng == "ya":
+                                            elif x == "COD" and y == "tidak":
+                                                            col1,col2 = st.columns(2)
+                                                            op = nama
+                                                            with col1:
+                                                                jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
+                                                                status_orderan = "pending"
+                                                                status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                                closing_by = st.selectbox("closing by", cs_by)
+                                                            with col2:
+                                                                barang = st.text_input("nama barang")
+                                                                jumlah_barang = st.number_input("jumlah barang")
+                                                                harga_barang = st.number_input("harga barang awal")
+                                                            ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                                                            diskon = st.number_input("jumlah diskon")
+                                                            ongkir = st.number_input("biaya ongkir")
+                                                            harga_akhir = harga_barang+ongkir-diskon
+                                                            tanggal = datetime.datetime.now()
+                                                            if st.button("submit"):
+                                                                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                                                                doc_input.set({
+                                                                        "nama": nama,
+                                                                        "no_telp": no_hp,
+                                                                        "alamat": alamat,
+                                                                        "kota": kota,
+                                                                        "metode pembayaran": metode_pem,
+                                                                        "jenis_order": jenis_order,
+                                                                        "barang": barang,
+                                                                        "jumlah_barang": jumlah_barang,
+                                                                        "ekspedisi": ekspedisi,
+                                                                        "status_orderan": status_orderan,
+                                                                        "status_pembayaran": status_pembayaran,
+                                                                        "harga_barang": harga_barang,
+                                                                        "diskon": diskon,
+                                                                        "ongkir": ongkir,
+                                                                        "harga_akhir": harga_akhir,
+                                                                        "closing_by": closing_by
+                                                            })
+                                                                st.success("data berhasil di masukkan")
+                                            elif x == "COD" and y == "ya":
                                                             col1,col2 = st.columns(2)
                                                             op = nama
                                                             with col1:
