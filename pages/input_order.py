@@ -49,161 +49,161 @@ def input_pertama():
                                             placeholder.empty()
                                             return pengiriman,metode_pem
 input_pertama()                                           
-                                            
-while metode_pem== "TRANSFER" and pengiriman == "tidak":
-                                                                    
-                                                                        col1,col2 = st.columns(2)
-                                                                        with col1:
-                                                                            jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
-                                                                            status_orderan = "pending"
-                                                                            status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                            closing_by = st.selectbox("closing by", cs_by)
-                                                                        with col2:
-                                                                            barang = st.text_input("nama barang")
-                                                                            jumlah_barang = st.number_input("jumlah barang")
-                                                                            harga_barang = st.number_input("harga barang awal")
-                                                                        ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                                                                        diskon = st.number_input("jumlah diskon")
-                                                                        ongkir = st.number_input("biaya ongkir")
-                                                                        harga_akhir = harga_barang+ongkir-diskon
-                                                                        tanggal = datetime.datetime.now()
-                                                                        if st.button(key="TRANSFER Later",label="submit"):
-                                                                            doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                                                                            doc_input.set({
-                                                                                    "nama": nama,
-                                                                                    "no_telp": no_hp,
-                                                                                    "alamat": alamat,
-                                                                                    "kota": kota,
-                                                                                    "metode pembayaran": metode_pem,
-                                                                                    "jenis_order": jenis_order,
-                                                                                    "barang": barang,
-                                                                                    "jumlah_barang": jumlah_barang,
-                                                                                    "ekspedisi": ekspedisi,
-                                                                                    "status_orderan": status_orderan,
-                                                                                    "status_pembayaran": status_pembayaran,
-                                                                                    "harga_barang": harga_barang,
-                                                                                    "diskon": diskon,
-                                                                                    "ongkir": ongkir,
-                                                                                    "harga_akhir": harga_akhir,
-                                                                                    "closing_by": closing_by
-                                                                        })
-                                                                        st.success("data berhasil di masukkan")
-                                                                        switch_page("orderan")
-while metode_pem== "TRANSFER" and pengiriman == "ya":
-                                                                    
-                                                                        col1,col2 = st.columns(2)
+def input_kedua():                                            
+    while metode_pem== "TRANSFER" and pengiriman == "tidak":
                                                                         
-
-                                                                        with col1:
-                                                                            jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
-                                                                            status_orderan = "pending"
-                                                                            status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                            tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
-                                                                            closing_by = st.selectbox("closing by", cs_by)
-                                                                        with col2:
-                                                                            barang = st.text_input("nama barang")
-                                                                            jumlah_barang = st.number_input("jumlah barang")
+                                                                            col1,col2 = st.columns(2)
+                                                                            with col1:
+                                                                                jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
+                                                                                status_orderan = "pending"
+                                                                                status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                                                closing_by = st.selectbox("closing by", cs_by)
+                                                                            with col2:
+                                                                                barang = st.text_input("nama barang")
+                                                                                jumlah_barang = st.number_input("jumlah barang")
+                                                                                harga_barang = st.number_input("harga barang awal")
                                                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                                                                            harga_barang = st.number_input("harga barang awal")
-                                                                        diskon = st.number_input("jumlah diskon")
-                                                                        ongkir = st.number_input("biaya ongkir")
-                                                                        harga_akhir = harga_barang+ongkir-diskon
-                                                                        tanggal = datetime.datetime.now()
-                                                                        if st.button(key="TRANSFER NOW",label="submit"):
-                                                                            doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                                                                            doc_input.set({
-                                                                                    "nama": nama,
-                                                                                    "no_telp": no_hp,
-                                                                                    "alamat": alamat,
-                                                                                    "kota": kota,
-                                                                                    "metode pembayaran": metode_pem,
-                                                                                    "jenis_order": jenis_order,
-                                                                                    "tanggal_pengiriman": tanggal_pengiriman,
-                                                                                    "barang": barang,
-                                                                                    "jumlah_barang": jumlah_barang,
-                                                                                    "ekspedisi": ekspedisi,
-                                                                                    "status_orderan": status_orderan,
-                                                                                    "status_pembayaran": status_pembayaran,
-                                                                                    "harga_barang": harga_barang,
-                                                                                    "diskon": diskon,
-                                                                                    "ongkir": ongkir,
-                                                                                    "harga_akhir": harga_akhir,
-                                                                                    "closing_by": closing_by
-                                                                        })
+                                                                            diskon = st.number_input("jumlah diskon")
+                                                                            ongkir = st.number_input("biaya ongkir")
+                                                                            harga_akhir = harga_barang+ongkir-diskon
+                                                                            tanggal = datetime.datetime.now()
+                                                                            if st.button(key="TRANSFER Later",label="submit"):
+                                                                                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                                                                                doc_input.set({
+                                                                                        "nama": nama,
+                                                                                        "no_telp": no_hp,
+                                                                                        "alamat": alamat,
+                                                                                        "kota": kota,
+                                                                                        "metode pembayaran": metode_pem,
+                                                                                        "jenis_order": jenis_order,
+                                                                                        "barang": barang,
+                                                                                        "jumlah_barang": jumlah_barang,
+                                                                                        "ekspedisi": ekspedisi,
+                                                                                        "status_orderan": status_orderan,
+                                                                                        "status_pembayaran": status_pembayaran,
+                                                                                        "harga_barang": harga_barang,
+                                                                                        "diskon": diskon,
+                                                                                        "ongkir": ongkir,
+                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "closing_by": closing_by
+                                                                            })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-while metode_pem== "COD" and pengiriman == "tidak":
-                                                                   
-                                                                        col1,col2 = st.columns(2)
-                                                                        with col1:
-                                                                            jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
-                                                                            status_orderan = "pending"
-                                                                            closing_by = st.selectbox("closing by", cs_by)
-                                                                        with col2:
-                                                                            barang = st.text_input("nama barang")
-                                                                            jumlah_barang = st.number_input("jumlah barang")
-                                                                            harga_barang = st.number_input("harga barang awal")
-                                                                        ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                                                                        diskon = st.number_input("jumlah diskon")
-                                                                        ongkir = st.number_input("biaya ongkir")
-                                                                        harga_akhir = harga_barang+ongkir-diskon
-                                                                        tanggal = datetime.datetime.now()
-                                                                        if st.button(key="COD NOW",label="submit"):
-                                                                            doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                                                                            doc_input.set({
-                                                                                    "nama": nama,
-                                                                                    "no_telp": no_hp,
-                                                                                    "alamat": alamat,
-                                                                                    "kota": kota,
-                                                                                    "metode pembayaran": metode_pem,
-                                                                                    "jenis_order": jenis_order,
-                                                                                    "barang": barang,
-                                                                                    "jumlah_barang": jumlah_barang,
-                                                                                    "ekspedisi": ekspedisi,
-                                                                                    "status_orderan": status_orderan,
-                                                                                    "status_pembayaran": status_pembayaran,
-                                                                                    "harga_barang": harga_barang,
-                                                                                    "diskon": diskon,
-                                                                                    "ongkir": ongkir,
-                                                                                    "harga_akhir": harga_akhir,
-                                                                                    "closing_by": closing_by
-                                                                        })
-                                                                            st.success("data berhasil di masukkan")
-                                                                            switch_page("orderan")
-while metode_pem== "COD" and pengiriman == "ya":
-                                                                        col1,col2 = st.columns(2)
-                                                                        with col1:
-                                                                            jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
-                                                                            status_orderan = "pending"
-                                                                            closing_by = st.selectbox("closing by", cs_by)
-                                                                        with col2:
-                                                                            barang = st.text_input("nama barang")
-                                                                            jumlah_barang = st.number_input("jumlah barang")
-                                                                            harga_barang = st.number_input("harga barang awal")
-                                                                        ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                                                                        diskon = st.number_input("jumlah diskon")
-                                                                        ongkir = st.number_input("biaya ongkir")
-                                                                        harga_akhir = harga_barang+ongkir-diskon
-                                                                        tanggal = datetime.datetime.now()
-                                                                        if st.button(key="COD Later",label="submit"):
-                                                                            doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
-                                                                            doc_input.set({
-                                                                                    "nama": nama,
-                                                                                    "no_telp": no_hp,
-                                                                                    "alamat": alamat,
-                                                                                    "kota": kota,
-                                                                                    "metode pembayaran": metode_pem,
-                                                                                    "jenis_order": jenis_order,
-                                                                                    "status_orderan": status_orderan,
-                                                                                    "tanggal_pengiriman": tanggal_pengiriman,
-                                                                                    "barang": barang,
-                                                                                    "jumlah_barang": jumlah_barang,
-                                                                                    "ekspedisi": ekspedisi,
-                                                                                    "harga_barang": harga_barang,
-                                                                                    "diskon": diskon,
-                                                                                    "ongkir": ongkir,
-                                                                                    "harga_akhir": harga_akhir,
-                                                                                    "closing_by": closing_by
-                                                                        })
-                                                                            st.success("data berhasil di masukkan")
-                                                                            switch_page("orderan")
+    while metode_pem== "TRANSFER" and pengiriman == "ya":
+                                                                        
+                                                                            col1,col2 = st.columns(2)
+                                                                            
+
+                                                                            with col1:
+                                                                                jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
+                                                                                status_orderan = "pending"
+                                                                                status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
+                                                                                closing_by = st.selectbox("closing by", cs_by)
+                                                                            with col2:
+                                                                                barang = st.text_input("nama barang")
+                                                                                jumlah_barang = st.number_input("jumlah barang")
+                                                                                ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                                                                                harga_barang = st.number_input("harga barang awal")
+                                                                            diskon = st.number_input("jumlah diskon")
+                                                                            ongkir = st.number_input("biaya ongkir")
+                                                                            harga_akhir = harga_barang+ongkir-diskon
+                                                                            tanggal = datetime.datetime.now()
+                                                                            if st.button(key="TRANSFER NOW",label="submit"):
+                                                                                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                                                                                doc_input.set({
+                                                                                        "nama": nama,
+                                                                                        "no_telp": no_hp,
+                                                                                        "alamat": alamat,
+                                                                                        "kota": kota,
+                                                                                        "metode pembayaran": metode_pem,
+                                                                                        "jenis_order": jenis_order,
+                                                                                        "tanggal_pengiriman": tanggal_pengiriman,
+                                                                                        "barang": barang,
+                                                                                        "jumlah_barang": jumlah_barang,
+                                                                                        "ekspedisi": ekspedisi,
+                                                                                        "status_orderan": status_orderan,
+                                                                                        "status_pembayaran": status_pembayaran,
+                                                                                        "harga_barang": harga_barang,
+                                                                                        "diskon": diskon,
+                                                                                        "ongkir": ongkir,
+                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "closing_by": closing_by
+                                                                            })
+                                                                                st.success("data berhasil di masukkan")
+                                                                                switch_page("orderan")
+    while metode_pem== "COD" and pengiriman == "tidak":
+                                                                    
+                                                                            col1,col2 = st.columns(2)
+                                                                            with col1:
+                                                                                jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
+                                                                                status_orderan = "pending"
+                                                                                closing_by = st.selectbox("closing by", cs_by)
+                                                                            with col2:
+                                                                                barang = st.text_input("nama barang")
+                                                                                jumlah_barang = st.number_input("jumlah barang")
+                                                                                harga_barang = st.number_input("harga barang awal")
+                                                                            ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                                                                            diskon = st.number_input("jumlah diskon")
+                                                                            ongkir = st.number_input("biaya ongkir")
+                                                                            harga_akhir = harga_barang+ongkir-diskon
+                                                                            tanggal = datetime.datetime.now()
+                                                                            if st.button(key="COD NOW",label="submit"):
+                                                                                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                                                                                doc_input.set({
+                                                                                        "nama": nama,
+                                                                                        "no_telp": no_hp,
+                                                                                        "alamat": alamat,
+                                                                                        "kota": kota,
+                                                                                        "metode pembayaran": metode_pem,
+                                                                                        "jenis_order": jenis_order,
+                                                                                        "barang": barang,
+                                                                                        "jumlah_barang": jumlah_barang,
+                                                                                        "ekspedisi": ekspedisi,
+                                                                                        "status_orderan": status_orderan,
+                                                                                        "status_pembayaran": status_pembayaran,
+                                                                                        "harga_barang": harga_barang,
+                                                                                        "diskon": diskon,
+                                                                                        "ongkir": ongkir,
+                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "closing_by": closing_by
+                                                                            })
+                                                                                st.success("data berhasil di masukkan")
+                                                                                switch_page("orderan")
+    while metode_pem== "COD" and pengiriman == "ya":
+                                                                            col1,col2 = st.columns(2)
+                                                                            with col1:
+                                                                                jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
+                                                                                status_orderan = "pending"
+                                                                                closing_by = st.selectbox("closing by", cs_by)
+                                                                            with col2:
+                                                                                barang = st.text_input("nama barang")
+                                                                                jumlah_barang = st.number_input("jumlah barang")
+                                                                                harga_barang = st.number_input("harga barang awal")
+                                                                            ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
+                                                                            diskon = st.number_input("jumlah diskon")
+                                                                            ongkir = st.number_input("biaya ongkir")
+                                                                            harga_akhir = harga_barang+ongkir-diskon
+                                                                            tanggal = datetime.datetime.now()
+                                                                            if st.button(key="COD Later",label="submit"):
+                                                                                doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
+                                                                                doc_input.set({
+                                                                                        "nama": nama,
+                                                                                        "no_telp": no_hp,
+                                                                                        "alamat": alamat,
+                                                                                        "kota": kota,
+                                                                                        "metode pembayaran": metode_pem,
+                                                                                        "jenis_order": jenis_order,
+                                                                                        "status_orderan": status_orderan,
+                                                                                        "tanggal_pengiriman": tanggal_pengiriman,
+                                                                                        "barang": barang,
+                                                                                        "jumlah_barang": jumlah_barang,
+                                                                                        "ekspedisi": ekspedisi,
+                                                                                        "harga_barang": harga_barang,
+                                                                                        "diskon": diskon,
+                                                                                        "ongkir": ongkir,
+                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "closing_by": closing_by
+                                                                            })
+                                                                                st.success("data berhasil di masukkan")
+                                                                                switch_page("orderan")
