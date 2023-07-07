@@ -56,6 +56,8 @@ def input_kedua():
                                                                         with col1:
                                                                             jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
                                                                             status_orderan = "pending"
+
+                                                                            
                                                                             if metode_pem == "TRANSFER":
                                                                                 status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
                                                                             else:
