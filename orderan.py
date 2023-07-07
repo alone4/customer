@@ -74,3 +74,13 @@ with cs:
                 if st.button("Masukkan Orderan"):
                         switch_page("input_order")
                 
+                db = firestore.Client.from_service_account_json("firestore-key.json")
+            
+                doc_ref = db.collection("custoemr")
+
+                # Then get the data at that reference.
+                doc = doc_ref.get()
+
+                # Let's see what we got!
+                st.write("The id is: ", doc.id)
+                st.write("The contents are: ", doc.to_dict())
