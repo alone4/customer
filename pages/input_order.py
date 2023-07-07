@@ -11,7 +11,7 @@ st.set_page_config(initial_sidebar_state="collapsed")
 st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 
 
-
+submit = st.form_submit_button("Submit")
 
 st.title("masukkan orderan")
 db = firestore.Client.from_service_account_json("firestore-key.json")
@@ -69,7 +69,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if st.form_submit_button("submit"):
+                                                                        if submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -111,7 +111,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if st.form_submit_button("submit"):
+                                                                        if submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -150,7 +150,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if st.form_submit_button("submit"):
+                                                                        if submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -189,7 +189,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                    if st.form_submit_button("submit"):
+                                                                        if submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
