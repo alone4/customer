@@ -53,7 +53,7 @@ def input_kedua(x):
         while x:
             pengiriman = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
             if x == "TRANSFER" and pengiriman == "tidak":
-                                                                    with st.form():
+                                                                    with st.form("Transfer Now"):
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -92,7 +92,7 @@ def input_kedua(x):
                                                                         st.success("data berhasil di masukkan")
                                                                         switch_page("orderan")
             elif x == "TRANSFER" and pengiriman == "ya":
-                                                                    with st.form(""):
+                                                                    with st.form("Transfer Later"):
                                                                         col1,col2 = st.columns(2)
                                                                         
 
@@ -135,7 +135,7 @@ def input_kedua(x):
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
             elif x == "COD" and pengiriman == "tidak":
-                                                                    with st.form(""):
+                                                                    with st.form("COD Now"):
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -173,9 +173,8 @@ def input_kedua(x):
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
             elif x == "COD" and pengiriman == "ya":
-                                                                    with st.form(""):
+                                                                    with st.form("COD Later"):
                                                                         col1,col2 = st.columns(2)
-                                                                        op = nama
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                                             tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
@@ -190,7 +189,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if st.form_submit_button("submit"):
+                                                                    if st.form_submit_button("submit"):
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
