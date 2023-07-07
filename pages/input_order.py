@@ -87,6 +87,7 @@ def input_kedua(x):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
+                                                                    switch_page("orderan")
         elif x == "TRANSFER" and pengiriman == "ya":
                                                                 col1,col2 = st.columns(2)
 
@@ -127,6 +128,7 @@ def input_kedua(x):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
+                                                                    switch_page("orderan")
         elif x == "COD" and pengiriman == "tidak":
                                                                 col1,col2 = st.columns(2)
                                                                 with col1:
@@ -163,6 +165,7 @@ def input_kedua(x):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
+                                                                    switch_page("orderan")
         elif x == "COD" and pengiriman == "ya":
                                                                 col1,col2 = st.columns(2)
                                                                 op = nama
@@ -201,3 +204,5 @@ def input_kedua(x):
                                                                             "closing_by": closing_by
                                                                 })
                                                                     st.success("data berhasil di masukkan")
+                                                                    switch_page("orderan")
+input_kedua(input_pertama())
