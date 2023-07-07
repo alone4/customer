@@ -12,7 +12,7 @@ def hides_side_page():
 
 hides_side_page()
 
-modal = Modal("Demo Modal")
+modal = Modal(key="Demo Modal")
 open_modal = st.button("Open")
 if open_modal:
     modal.open()
