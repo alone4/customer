@@ -12,10 +12,9 @@ st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </st
 
 
 order = Modal(key="order modal", title="Input Order")
-open_modal = st.button("Open")
 if open_modal:
     order.open()
-placeholder = st.empty()
+
 if order.is_open():
     with order.container():
         input_kedua(input_pertama())
@@ -29,8 +28,7 @@ eks_choice = ["SAP","JNE"]
 metode_choice = ["COD","TRANSFER"]
 status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pending", "Proses", "Cancel"]
 cs_by = ["salma","alya","salsa","intan"]
-# Create a reference to the Google post.
-# Let's see what we got!
+
 cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
@@ -87,8 +85,4 @@ with cs:
                     with col3:
                         st.write("")
                     with col4:
-                        min_date = datetime.datetime(2023,7,5)
-                        max_date = datetime.date(2023,12,31)
-
-                if st.button("masukkan orderan"):       
-                    switch_page('input_order')
+                        open_modal = st.button("Masukkan Orderan")
