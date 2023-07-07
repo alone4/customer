@@ -33,6 +33,7 @@ def input_pertama():
                                             nama = st.text_input("nama customer")
                                             nama_wa = st.text_input("nama wa customer")
                                             no_hp = st.number_input("no hp")
+                                            pengiriman = st.selectbox("apakah pengiriman nanti?", ['ya','tidak'])
                                         with col2:
                                             alamat = st.text_area("alamat")
                                             kota = st.text_input("kota")
@@ -46,11 +47,11 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            return metode_pem
+                                            return metode_pem,pengiriman
                                             
                                             
 def input_kedua(x):
-        while x:
+        
             pengiriman = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
             if x == "TRANSFER" and pengiriman == "tidak":
                                                                     
@@ -210,4 +211,5 @@ def input_kedua(x):
                                                                         })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-input_kedua(input_pertama())
+input_pertama()
+input_kedua(metode_pem,pengiriman)
