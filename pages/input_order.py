@@ -212,4 +212,4 @@ def input_kedua(x):
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
 input_pertama()
-input_kedua(metode_pem,pengiriman)
+input_kedua(metode_pem)
