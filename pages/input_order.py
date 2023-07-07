@@ -69,7 +69,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if submit:
+                                                                        while submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -111,7 +111,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if submit:
+                                                                        while submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -150,7 +150,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if submit:
+                                                                        while submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -189,7 +189,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        if submit:
+                                                                        while submit:
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
