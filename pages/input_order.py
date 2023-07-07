@@ -3,6 +3,7 @@ import streamlit as st
 from streamlit.web import bootstrap
 import datetime
 import streamlit.components.v1 as components
+from streamlit_modal import Modal
 from streamlit_extras.switch_page_button import switch_page
 from google.cloud import firestore
 def hides_side_page():
@@ -10,6 +11,28 @@ def hides_side_page():
     st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 
 hides_side_page()
+
+modal = Modal("Demo Modal")
+open_modal = st.button("Open")
+if open_modal:
+    modal.open()
+
+if modal.is_open():
+    with modal.container():
+        st.write("Text goes here")
+
+        html_string = '''
+        <h1>HTML string in RED</h1>
+
+        <script language="javascript">
+          document.querySelector("h1").style.color = "red";
+        </script>
+        '''
+        components.html(html_string)
+
+        st.write("Some fancy text")
+        value = st.checkbox("Check me")
+        st.write(f"Checkbox checked: {value}")
 
 st.title("masukkan orderan")
 db = firestore.Client.from_service_account_json("firestore-key.json")
