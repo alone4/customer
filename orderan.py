@@ -8,27 +8,35 @@ from streamlit_modal import Modal
 from google.cloud import firestore
 st.set_page_config(initial_sidebar_state="collapsed") 
 st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
-modal = Modal(key="Demo Modal", title="order")
+order = Modal(key="order modal", title="input order")
 open_modal = st.button("Open")
 if open_modal:
-    modal.open()
-
-if modal.is_open():
-    with modal.container():
-        st.write("Text goes here")
-
-        html_string = '''
-        <h1>HTML string in RED</h1>
-
-        <script language="javascript">
-          document.querySelector("h1").style.color = "red";
-        </script>
-        '''
-        components.html(html_string)
-
-        st.write("Some fancy text")
-        value = st.checkbox("Check me")
-        st.write(f"Checkbox checked: {value}")
+    order.open()
+placeholder = st.empty()
+if order.is_open():
+    with order.container():
+      with placeholder.container():
+        with st.form("Masukkan orderan"):
+                                check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
+                                if check == "belum":
+                                    col1,col2= st.columns(2)
+                                    with col1:
+                                        nama = st.text_input("nama customer")
+                                        nama_wa = st.text_input("nama wa customer")
+                                        no_hp = st.number_input("no hp")
+                                    with col2:
+                                        alamat = st.text_area("alamat")
+                                        kota = st.text_input("kota")
+                                        metode_pem = st.selectbox("pilih pembayaran", metode_choice)
+                                    if st.form_submit_button("submit"):
+                                        doc_input = db.collection("customer").document(nama_wa)
+                                        doc_input.set({
+                                                "nama": nama,
+                                                "no_telp": no_hp,
+                                                "alamat": alamat,
+                                                "kota": kota
+                                            })
+                                        placeholder.empty()
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
