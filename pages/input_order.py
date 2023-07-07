@@ -56,10 +56,14 @@ def input_kedua():
                                                                         with col1:
                                                                             jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
                                                                             status_orderan = "pending"
-                                                                            while metode_pem == "TRANSFER":
+                                                                            if metode_pem == "TRANSFER":
                                                                                 status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                            while pengiriman == "ya":
+                                                                            else:
+                                                                                    pass
+                                                                            if pengiriman == "ya":
                                                                                 tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
+                                                                            else:
+                                                                                    pass
                                                                             closing_by = st.selectbox("closing by", cs_by)
                                                                         with col2:
                                                                             barang = st.text_input("nama barang")
