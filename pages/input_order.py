@@ -173,7 +173,7 @@ def input_kedua():
     while metode_pem== "COD" and pengiriman == "ya":
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
-                                                                                jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfs"),label="Jenis orderan", options=jenis_order_choice)
+                                                                                jenis_order = st.selectbox(key=("streamlit kkontolllllllllllllll"),label="Jenis orderan", options=jenis_order_choice)
                                                                                 status_orderan = "pending"
                                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                                             with col2:
