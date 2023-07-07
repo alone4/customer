@@ -76,11 +76,10 @@ with cs:
                 
                 users_ref = db.collection("customer")
                 docs = users_ref.stream()
+                
 
                 for doc in docs:
                     st.write(f"{doc.id} => {doc.to_dict().keys()}")
-                    for x,y in doc.to_dict().items():
-                        st.write("keys")
-                        st.write(x)
-                        st.write("values")
-                        st.write(y)
+                    users_ref1 = db.collection("customer").document(doc.id)
+                    docs1 = users_ref1.stream()
+                    st.write(docs1.id)
