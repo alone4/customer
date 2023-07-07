@@ -51,6 +51,7 @@ if metode_pem == "TRANSFER" and peng == "tidak":
                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                             status_orderan = "pending"
                                                             status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                            closing_by = st.selectbox("closing by", cs_by)
                                                         with col2:
                                                             barang = st.text_input("nama barang")
                                                             jumlah_barang = st.number_input("jumlah barang")
@@ -59,7 +60,6 @@ if metode_pem == "TRANSFER" and peng == "tidak":
                                                         diskon = st.number_input("jumlah diskon")
                                                         ongkir = st.number_input("biaya ongkir")
                                                         harga_akhir = harga_barang+ongkir-diskon
-                                                        closing_by = st.selectbox("closing by", cs_by)
                                                         tanggal = datetime.datetime.now()
                                                         if st.button("submit"):
                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
