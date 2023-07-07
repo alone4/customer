@@ -80,8 +80,7 @@ with cs:
 
                 for doc in docs:
                     st.write(f"{doc.id}")
-                    users_ref1 = db.collection("customer").document("nazhif").collection("orderan")
-                    docs1 = users_ref1.get()
 
-
-                st.write(f"{docs1.to_dict()}")
+                users_ref1 = db.collection("customer").document("nazhif").collection("orderan")
+                docs1 = users_ref1.get()
+                st.write(f"{docs1.id}")
