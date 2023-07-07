@@ -47,7 +47,6 @@ def input_pertama():
                                                 })
                                             placeholder.empty()
 
-
                                             peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
 
     if metode_pem == "TRANSFER" and peng == "tidak":
