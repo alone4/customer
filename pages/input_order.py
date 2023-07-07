@@ -25,7 +25,7 @@ game = False
 def input_pertama():
     placeholder = st.empty()
     with placeholder.container():
-                                    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman
+                                    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman, game
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                     if check == "belum":
                                         col1,col2= st.columns(2)
@@ -47,7 +47,7 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            return game == True
+                                            game = True
                                             
                                             
 def input_kedua(x,y):
