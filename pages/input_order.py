@@ -50,8 +50,7 @@ def input_pertama():
                                             return False
                                                                                       
                                             
-def input_kedua(x):
-    while x == False:
+def input_kedua():
                                                                     
                                                                         col1,col2 = st.columns(2)     
                                                                         with col1:
@@ -94,5 +93,6 @@ def input_kedua(x):
                                                                         })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-
-input_kedua(input_pertama)
+input_pertama()
+while False:
+    input_kedua()
