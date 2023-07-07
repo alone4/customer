@@ -94,5 +94,5 @@ def input_kedua():
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
 input_pertama()
-while False:
+while True:
     input_kedua()
