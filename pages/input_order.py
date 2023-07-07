@@ -96,12 +96,13 @@ def input_kedua(x,y):
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                                 status_orderan = "pending"
                                                                 status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime)
                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                             with col2:
                                                                 barang = st.text_input("nama barang")
                                                                 jumlah_barang = st.number_input("jumlah barang")
+                                                                ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                                 harga_barang = st.number_input("harga barang awal")
-                                                            ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                             diskon = st.number_input("jumlah diskon")
                                                             ongkir = st.number_input("biaya ongkir")
                                                             harga_akhir = harga_barang+ongkir-diskon
@@ -115,6 +116,7 @@ def input_kedua(x,y):
                                                                         "kota": kota,
                                                                         "metode pembayaran": metode_pem,
                                                                         "jenis_order": jenis_order,
+                                                                        "tanggal_pengiriman": tanggal_pengiriman,
                                                                         "barang": barang,
                                                                         "jumlah_barang": jumlah_barang,
                                                                         "ekspedisi": ekspedisi,
@@ -129,11 +131,9 @@ def input_kedua(x,y):
                                                                 st.success("data berhasil di masukkan")
                                             elif x == "COD" and y == "tidak":
                                                             col1,col2 = st.columns(2)
-                                                            op = nama
                                                             with col1:
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                                 status_orderan = "pending"
-                                                                status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                             with col2:
                                                                 barang = st.text_input("nama barang")
@@ -170,8 +170,8 @@ def input_kedua(x,y):
                                                             op = nama
                                                             with col1:
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
+                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime)
                                                                 status_orderan = "pending"
-                                                                status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                             with col2:
                                                                 barang = st.text_input("nama barang")
@@ -191,11 +191,11 @@ def input_kedua(x,y):
                                                                         "kota": kota,
                                                                         "metode pembayaran": metode_pem,
                                                                         "jenis_order": jenis_order,
+                                                                        "status_orderan": status_orderan,
+                                                                        "tanggal_pengiriman": tanggal_pengiriman,
                                                                         "barang": barang,
                                                                         "jumlah_barang": jumlah_barang,
                                                                         "ekspedisi": ekspedisi,
-                                                                        "status_orderan": status_orderan,
-                                                                        "status_pembayaran": status_pembayaran,
                                                                         "harga_barang": harga_barang,
                                                                         "diskon": diskon,
                                                                         "ongkir": ongkir,
