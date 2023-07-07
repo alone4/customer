@@ -65,7 +65,7 @@ def input_kedua(x):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.date(2023,12,31)
+                                                                tanggal = datetime.datetime.now()
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
@@ -94,7 +94,7 @@ def input_kedua(x):
                                                                     jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                                     status_orderan = "pending"
                                                                     status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime)
+                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
                                                                     closing_by = st.selectbox("closing by", cs_by)
                                                                 with col2:
                                                                     barang = st.text_input("nama barang")
@@ -104,7 +104,7 @@ def input_kedua(x):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.date(2023,12,31)
+                                                                tanggal = datetime.datetime.now()
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
@@ -141,7 +141,7 @@ def input_kedua(x):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.date(2023,12,31)
+                                                                tanggal = datetime.datetime.now()
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
@@ -168,7 +168,7 @@ def input_kedua(x):
                                                                 op = nama
                                                                 with col1:
                                                                     jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
-                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime)
+                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
                                                                     status_orderan = "pending"
                                                                     closing_by = st.selectbox("closing by", cs_by)
                                                                 with col2:
@@ -179,7 +179,7 @@ def input_kedua(x):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.date(2023,12,31)
+                                                                tanggal = datetime.datetime.now()
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
