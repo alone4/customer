@@ -76,7 +76,7 @@ with cs:
                 
                 db = firestore.Client.from_service_account_json("firestore-key.json")
             
-                doc_ref = db.collection("custoemr")
+                doc_ref = db.collection("customer")
 
                 # Then get the data at that reference.
                 doc = doc_ref.get()
