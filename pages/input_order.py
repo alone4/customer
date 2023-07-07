@@ -161,7 +161,6 @@ def input_kedua():
                                                                                         "jumlah_barang": jumlah_barang,
                                                                                         "ekspedisi": ekspedisi,
                                                                                         "status_orderan": status_orderan,
-                                                                                        "status_pembayaran": status_pembayaran,
                                                                                         "harga_barang": harga_barang,
                                                                                         "diskon": diskon,
                                                                                         "ongkir": ongkir,
