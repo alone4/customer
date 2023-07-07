@@ -12,12 +12,6 @@ st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </st
 
 
 order = Modal(key="order modal", title="Input Order")
-if open_modal:
-    order.open()
-
-if order.is_open():
-    with order.container():
-        input_kedua(input_pertama())
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
@@ -86,3 +80,9 @@ with cs:
                         st.write("")
                     with col4:
                         open_modal = st.button("Masukkan Orderan")
+                        if open_modal:
+                            order.open()
+
+                        if order.is_open():
+                            with order.container():
+                                input_kedua(input_pertama())
