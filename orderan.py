@@ -7,6 +7,7 @@ from streamlit_extras.switch_page_button import switch_page
 from streamlit_modal import Modal
 from google.cloud import firestore
 from input_order import *
+
 st.set_page_config(initial_sidebar_state="collapsed") 
 st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 order = Modal(key="order modal", title="input order")
@@ -16,6 +17,7 @@ if open_modal:
 placeholder = st.empty()
 if order.is_open():
     input_pertama()
+    
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
 
