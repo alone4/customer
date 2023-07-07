@@ -17,7 +17,7 @@ if open_modal:
 placeholder = st.empty()
 if order.is_open():
     with order.container():
-        input_pertama()
+        pass
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
 st.write("click di bawah untuk memilih memasukkan orderan")
