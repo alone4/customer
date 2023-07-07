@@ -36,7 +36,6 @@ def input_pertama():
                                             alamat = st.text_area("alamat")
                                             kota = st.text_input("kota")
                                             metode_pem = st.selectbox("pilih pembayaran", metode_choice)
-                                        pengiriman = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
                                         if st.button("submit"):
                                             doc_input = db.collection("customer").document(nama_wa)
                                             doc_input.set({
