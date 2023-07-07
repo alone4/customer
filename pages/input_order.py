@@ -98,7 +98,7 @@ def input_kedua():
                                                                                 jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
                                                                                 status_orderan = "pending"
                                                                                 status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime(2023,12,31))
+                                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime.now())
                                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                                             with col2:
                                                                                 barang = st.text_input("nama barang")
@@ -174,7 +174,7 @@ def input_kedua():
                                                                             with col1:
                                                                                 jenis_order = st.selectbox(key=("streamlit kkontolllllllllllllll"),label="Jenis orderan", options=jenis_order_choice)
                                                                                 status_orderan = "pending"
-                                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime(2023,12,31))
+                                                                                tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime.now())
                                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                                             with col2:
                                                                                 barang = st.text_input("nama barang")
