@@ -209,4 +209,4 @@ def input_kedua():
                                                                                 switch_page("orderan")
 
 input_pertama()
-input_kedua
+input_kedua()
