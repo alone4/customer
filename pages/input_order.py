@@ -47,7 +47,7 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            return metode_pem,pengiriman
+                                            return game == True
                                             
                                             
 def input_kedua(x,y):
