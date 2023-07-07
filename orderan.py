@@ -7,7 +7,8 @@ from streamlit_extras.switch_page_button import switch_page
 from streamlit_modal import Modal
 from google.cloud import firestore
 from pages.input_order import *
-hides_side_page()
+st.set_page_config(initial_sidebar_state="collapsed") 
+st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 
 
 order = Modal(key="order modal", title="Input Order")
