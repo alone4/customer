@@ -5,8 +5,13 @@ import datetime
 import streamlit.components.v1 as components
 from streamlit_extras.switch_page_button import switch_page
 from google.cloud import firestore
+from streamlit_modal import Modal
 st.set_page_config(initial_sidebar_state="collapsed") 
 st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
+modal = Modal("Demo Modal")
+open_modal = st.button("Open")
+if open_modal:
+    modal.open()
 
 
 st.title("Selamat datang apa yang anda perlukan hari ini?")
@@ -20,6 +25,22 @@ status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pendi
 cs_by = ["salma","alya","salsa","intan"]
 # Create a reference to the Google post.
 # Let's see what we got!
+if modal.is_open():
+    with modal.container():
+        st.write("Text goes here")
+
+        html_string = '''
+        <h1>HTML string in RED</h1>
+
+        <script language="javascript">
+          document.querySelector("h1").style.color = "red";
+        </script>
+        '''
+        components.html(html_string)
+
+        st.write("Some fancy text")
+        value = st.checkbox("Check me")
+        st.write(f"Checkbox checked: {value}")
 cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
