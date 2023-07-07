@@ -21,7 +21,7 @@ status_orderan_choice = [ "Pending", "Proses", "Cancel"]
 status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
 jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
-
+False
 def input_pertama():
     placeholder = st.empty()
     with placeholder.container():
@@ -210,4 +210,5 @@ def input_kedua(x,y):
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
 input_pertama()
-input_kedua(metode_pem,pengiriman)
+while True:
+    input_kedua(metode_pem,pengiriman)
