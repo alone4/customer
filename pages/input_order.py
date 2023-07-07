@@ -47,8 +47,6 @@ def input_pertama():
                                                 })
                                             placeholder.empty()
                                             
-                                        return input_kedua(metode_pem,pengiriman)
-
                                             
 def input_kedua(x,y):
         if x == "TRANSFER" and y == "tidak":
@@ -66,7 +64,7 @@ def input_kedua(x,y):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.datetime.now()
+                                                                tanggal = datetime.date(2023,12,31)
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
@@ -105,7 +103,7 @@ def input_kedua(x,y):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.datetime.now()
+                                                                tanggal = datetime.date(2023,12,31)
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
@@ -142,7 +140,7 @@ def input_kedua(x,y):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.datetime.now()
+                                                                tanggal = datetime.date(2023,12,31)
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
@@ -180,7 +178,7 @@ def input_kedua(x,y):
                                                                 diskon = st.number_input("jumlah diskon")
                                                                 ongkir = st.number_input("biaya ongkir")
                                                                 harga_akhir = harga_barang+ongkir-diskon
-                                                                tanggal = datetime.datetime.now()
+                                                                tanggal = datetime.date(2023,12,31)
                                                                 if st.button("submit"):
                                                                     doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                     doc_input.set({
