@@ -77,4 +77,4 @@ with cs:
 
                 if order.is_open():
                         with order.container():
-                        input_kedua(input_pertama())
+                                input_kedua(input_pertama())
