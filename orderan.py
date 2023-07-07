@@ -1,4 +1,3 @@
-hides_side_page()
 import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
@@ -8,6 +7,7 @@ from streamlit_extras.switch_page_button import switch_page
 from streamlit_modal import Modal
 from google.cloud import firestore
 from pages.input_order import *
+hides_side_page()
 
 
 order = Modal(key="order modal", title="Input Order")
