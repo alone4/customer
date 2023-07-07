@@ -59,11 +59,11 @@ def input_kedua():
                                                                             if metode_pem == "TRANSFER":
                                                                                 status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
                                                                             else:
-                                                                                    pass
+                                                                                    st.write("streamlit kontol")
                                                                             if pengiriman == "ya":
                                                                                 tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.date(2023,12,31))
                                                                             else:
-                                                                                    pass
+                                                                                    st.write("streamlit kontol")
                                                                             closing_by = st.selectbox("closing by", cs_by)
                                                                         with col2:
                                                                             barang = st.text_input("nama barang")
