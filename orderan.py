@@ -79,3 +79,6 @@ with cs:
 
                 for doc in docs:
                     st.write(f"{doc.id} => {doc.to_dict().keys()}")
+                    for x,y in doc.to_dict().items():
+                        st.write(x)
+                        st.write(y)
