@@ -8,8 +8,8 @@ from streamlit_modal import Modal
 from google.cloud import firestore
 from pages.input_order import *
 
-st.set_page_config(initial_sidebar_state="collapsed") 
-st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
+hides_side_page()
+
 order = Modal(key="order modal", title="input order")
 open_modal = st.button("Open")
 if open_modal:
