@@ -11,9 +11,7 @@ st.set_page_config(initial_sidebar_state="collapsed")
 st.markdown( """ <style> [data-testid="collapsedControl"] { display: none } </style> """, unsafe_allow_html=True, )
 
 
-pass
-pass
-submit = st.form_submit_button("Submit")
+
 
 st.title("masukkan orderan")
 db = firestore.Client.from_service_account_json("firestore-key.json")
@@ -55,7 +53,7 @@ def input_kedua(x):
         while x:
             pengiriman = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
             if x == "TRANSFER" and pengiriman == "tidak":
-                                                                    with st.form("Transfer Now"):
+                                                                    
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -71,7 +69,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        while submit:
+                                                                        if st.button(key="TRANSFER Later",label="submit"):
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -94,7 +92,7 @@ def input_kedua(x):
                                                                         st.success("data berhasil di masukkan")
                                                                         switch_page("orderan")
             elif x == "TRANSFER" and pengiriman == "ya":
-                                                                    with st.form("Transfer Later"):
+                                                                    
                                                                         col1,col2 = st.columns(2)
                                                                         
 
@@ -113,7 +111,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        while submit:
+                                                                        if st.button(key="TRANSFER NOW",label="submit"):
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -137,7 +135,7 @@ def input_kedua(x):
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
             elif x == "COD" and pengiriman == "tidak":
-                                                                    with st.form("COD Now"):
+                                                                   
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -152,7 +150,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        while submit:
+                                                                        if st.button(key="COD NOW",label="submit"):
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
@@ -175,7 +173,6 @@ def input_kedua(x):
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
             elif x == "COD" and pengiriman == "ya":
-                                                                    with st.form("COD Later"):
                                                                         col1,col2 = st.columns(2)
                                                                         with col1:
                                                                             jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -191,7 +188,7 @@ def input_kedua(x):
                                                                         ongkir = st.number_input("biaya ongkir")
                                                                         harga_akhir = harga_barang+ongkir-diskon
                                                                         tanggal = datetime.datetime.now()
-                                                                        while submit:
+                                                                        if st.button(key="COD Later",label="submit"):
                                                                             doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                             doc_input.set({
                                                                                     "nama": nama,
