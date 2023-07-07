@@ -25,7 +25,6 @@ def input_pertama():
     placeholder = st.empty()
     with placeholder.container():
             with st.form("Masukkan orderan"):
-                                    global nama,nama_wa,no_hp,alamat,kota,metode_pem,peng
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                     if check == "belum":
                                         col1,col2= st.columns(2)
