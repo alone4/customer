@@ -79,6 +79,7 @@ with cs:
                     with col3:
                         st.write("")
                     with col4:
+                            pass
                 open_modal = st.button("Masukkan Orderan")
                 if open_modal:
                         order.open()
