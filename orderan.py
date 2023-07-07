@@ -71,10 +71,6 @@ with cs:
                         st.write("")
                  
                 
-                open_modal = st.button("Masukkan Orderan")
-                if open_modal:
-                        order.open()
-
-                if order.is_open():
-                        with order.container():
-                                input_kedua(input_pertama())
+                if st.button("Masukkan Orderan"):
+                        switch_page("input_order")
+                
