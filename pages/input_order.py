@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 from streamlit.web import bootstrap
 import datetime
+from streamlit_extras.switch_page_button import switch_page
 import streamlit.components.v1 as components
 from google.cloud import firestore
 
