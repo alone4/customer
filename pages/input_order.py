@@ -45,18 +45,20 @@ with placeholder.container():
 
 peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
 if metode_pem == "TRANSFER" and peng == "tidak":
+                                                        col1,col2 = st.columns(2)
                                                         op = nama
-                                                        jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
-                                                        barang = st.text_input("nama barang")
-                                                        jumlah_barang = st.number_input("jumlah barang")
-                                                        status_orderan = "pending"
-                                                        status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                        with col1:
+                                                            jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
+                                                            status_orderan = "pending"
+                                                            status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
+                                                        with col2:
+                                                            barang = st.text_input("nama barang")
+                                                            jumlah_barang = st.number_input("jumlah barang")
+                                                            harga_barang = st.number_input("harga barang awal")
                                                         ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
-                                                        harga_barang = st.number_input("harga barang awal")
                                                         diskon = st.number_input("jumlah diskon")
                                                         ongkir = st.number_input("biaya ongkir")
-                                                        update_harga = harga_barang+ongkir-diskon
-                                                        harga_akhir = st.number_input("harga akhir", value=update_harga)
+                                                        harga_akhir = harga_barang+ongkir-diskon
                                                         closing_by = st.selectbox("closing by", cs_by)
                                                         tanggal = datetime.datetime.now()
                                                         if st.button("submit"):
