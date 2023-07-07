@@ -50,7 +50,7 @@ def input_pertama():
 
                                             
 def input_kedua(x,y):
-                                            if x == "TRANSFER" and y == "tidak":
+    if x == "TRANSFER" and y == "tidak":
                                                             col1,col2 = st.columns(2)
                                                             with col1:
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -87,7 +87,7 @@ def input_kedua(x,y):
                                                                         "closing_by": closing_by
                                                             })
                                                                 st.success("data berhasil di masukkan")
-                                            elif x == "TRANSFER" and y == "ya":
+    elif x == "TRANSFER" and y == "ya":
                                                             col1,col2 = st.columns(2)
                                                             op = nama
                                                             with col1:
@@ -127,7 +127,7 @@ def input_kedua(x,y):
                                                                         "closing_by": closing_by
                                                             })
                                                                 st.success("data berhasil di masukkan")
-                                            elif x == "COD" and y == "tidak":
+    elif x == "COD" and y == "tidak":
                                                             col1,col2 = st.columns(2)
                                                             with col1:
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
@@ -163,7 +163,7 @@ def input_kedua(x,y):
                                                                         "closing_by": closing_by
                                                             })
                                                                 st.success("data berhasil di masukkan")
-                                            elif x == "COD" and y == "ya":
+    elif x == "COD" and y == "ya":
                                                             col1,col2 = st.columns(2)
                                                             op = nama
                                                             with col1:
