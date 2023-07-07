@@ -79,10 +79,10 @@ with cs:
                     with col3:
                         st.write("")
                     with col4:
-                        open_modal = st.button("Masukkan Orderan")
-                        if open_modal:
-                            order.open()
+                open_modal = st.button("Masukkan Orderan")
+                if open_modal:
+                        order.open()
 
-                        if order.is_open():
-                            with order.container():
-                                input_kedua(input_pertama())
+                if order.is_open():
+                        with order.container():
+                        input_kedua(input_pertama())
