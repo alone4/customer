@@ -48,10 +48,10 @@ def input_pertama():
                                             placeholder.empty()
 
 
-    peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
+                                            peng = st.radio("apakah barang dikirim nanti?", ["ya","tidak"])
+
     if metode_pem == "TRANSFER" and peng == "tidak":
                                                             col1,col2 = st.columns(2)
-                                                            op = nama
                                                             with col1:
                                                                 jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                                 status_orderan = "pending"
