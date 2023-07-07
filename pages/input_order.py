@@ -49,7 +49,7 @@ def input_pertama():
                                                 })
                                             placeholder.empty()
 
-                                            input_kedua(metode_pem, peng)
+
                                             
 def input_kedua(x,y):
                                             if x == "TRANSFER" and y == "tidak":
