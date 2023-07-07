@@ -46,7 +46,7 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-
+                                    return metode_pembayaran,pengiriman
 
                                             
 
@@ -94,7 +94,7 @@ elif metode_pembayaran == "TRANSFER" and pengiriman == "ya":
                                                                     jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
                                                                     status_orderan = "pending"
                                                                     status_pembayaran = st.selectbox("Apakah sudah membayar?", status_pembayaran_choice)
-                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime)
+                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime)
                                                                     closing_by = st.selectbox("closing by", cs_by)
                                                                 with col2:
                                                                     barang = st.text_input("nama barang")
@@ -167,7 +167,7 @@ elif metode_pembayaran == "COD" and pengiriman == "ya":
                                                                 op = nama
                                                                 with col1:
                                                                     jenis_order = st.selectbox("Jenis orderan", jenis_order_choice)
-                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime)
+                                                                    tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime)
                                                                     status_orderan = "pending"
                                                                     closing_by = st.selectbox("closing by", cs_by)
                                                                 with col2:
