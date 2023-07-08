@@ -81,7 +81,7 @@ with cs:
                 for doc in docs:
                     st.write(f"{doc.id}")
 
-                users_ref1 = db.collection("customer").document("nazhif")
+                users_ref1 = db.collection("customer").document("nazhif").collection("orderan")
                 docs1 = users_ref1.stream()
                 for doc in docs1:
                     st.write(f"{doc.id}")
