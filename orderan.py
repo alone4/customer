@@ -85,3 +85,5 @@ with cs:
                 docs1 = users_ref1.stream()
                 for doc in docs1:
                     st.write(f"{doc.id} => {doc.to_dict()}")
+                    for x,y in doc.to_dict().items():
+                        st.write(f"{x} => {y}")
