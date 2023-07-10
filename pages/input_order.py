@@ -33,7 +33,7 @@ def input_pertama():
                                         with col1:
                                             nama = st.text_input("nama customer")
                                             nama_wa = st.text_input("nama wa customer")
-                                            no_hp = st.text_input("no hp", type=int)
+                                            no_hp = st.number_input("no hp")
                                             pengiriman = st.selectbox("apakah pengiriman nanti?", ['ya','tidak'])
                                         with col2:
                                             alamat = st.text_area("alamat")
