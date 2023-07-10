@@ -47,7 +47,7 @@ def input_pertama(x):
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            return x
+                                            x
 
                                      
 def input_kedua():                                            
