@@ -65,7 +65,6 @@ def input_kedua():
                                                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
-                                                                            harga_akhir = harga_barang+ongkir-diskon
                                                                             tanggal = datetime.datetime.now()
                                                                             if st.button(key="TRANSFER Later",label="submit"):
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
@@ -84,7 +83,7 @@ def input_kedua():
                                                                                         "harga_barang": harga_barang,
                                                                                         "diskon": diskon,
                                                                                         "ongkir": ongkir,
-                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "harga_akhir": harga_barang+ongkir-diskon,
                                                                                         "closing_by": closing_by
                                                                             })
                                                                             st.success("data berhasil di masukkan")
@@ -107,7 +106,6 @@ def input_kedua():
                                                                                 harga_barang = st.number_input("harga barang awal")
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
-                                                                            harga_akhir = harga_barang+ongkir-diskon
                                                                             tanggal = datetime.datetime.now()
                                                                             if st.button(key="TRANSFER NOW",label="submit"):
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
@@ -127,7 +125,7 @@ def input_kedua():
                                                                                         "harga_barang": harga_barang,
                                                                                         "diskon": diskon,
                                                                                         "ongkir": ongkir,
-                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "harga_akhir": harga_barang+ongkir-diskon,
                                                                                         "closing_by": closing_by
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
@@ -146,7 +144,6 @@ def input_kedua():
                                                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
-                                                                            harga_akhir = harga_barang+ongkir-diskon
                                                                             tanggal = datetime.datetime.now()
                                                                             if st.button(key="COD NOW",label="submit"):
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
@@ -164,7 +161,7 @@ def input_kedua():
                                                                                         "harga_barang": harga_barang,
                                                                                         "diskon": diskon,
                                                                                         "ongkir": ongkir,
-                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "harga_akhir": harga_barang+ongkir-diskon,
                                                                                         "closing_by": closing_by
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
@@ -183,7 +180,6 @@ def input_kedua():
                                                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
-                                                                            harga_akhir = harga_barang+ongkir-diskon
                                                                             tanggal = datetime.datetime.now()
                                                                             if st.button(key="COD Later",label="submit"):
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
@@ -202,7 +198,7 @@ def input_kedua():
                                                                                         "harga_barang": harga_barang,
                                                                                         "diskon": diskon,
                                                                                         "ongkir": ongkir,
-                                                                                        "harga_akhir": harga_akhir,
+                                                                                        "harga_akhir": harga_barang+ongkir-diskon,
                                                                                         "closing_by": closing_by
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
