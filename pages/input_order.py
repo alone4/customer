@@ -205,6 +205,6 @@ def input_kedua():
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
 
-input_pertama()
-if placeholder.empty():
+
+if input_pertama:
     input_kedua()
