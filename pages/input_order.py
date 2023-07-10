@@ -68,7 +68,7 @@ def input_kedua():
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
                                                                             tanggal = datetime.datetime.now()
-                                                                            if st.button(key="TRANSFER Later",label="submit") and diskon != "":
+                                                                            if st.button(key="TRANSFER Later",label="submit")  :
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                                 doc_input.set({
                                                                                         "nama": nama,
@@ -109,7 +109,7 @@ def input_kedua():
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
                                                                             tanggal = datetime.datetime.now()
-                                                                            if st.button(key="TRANSFER NOW",label="submit") and diskon != "":
+                                                                            if st.button(key="TRANSFER NOW",label="submit")  :
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                                 doc_input.set({
                                                                                         "nama": nama,
@@ -147,7 +147,7 @@ def input_kedua():
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
                                                                             tanggal = datetime.datetime.now()
-                                                                            if st.button(key="COD NOW",label="submit") and diskon != "":
+                                                                            if st.button(key="COD NOW",label="submit")  :
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                                 doc_input.set({
                                                                                         "nama": nama,
@@ -183,7 +183,7 @@ def input_kedua():
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
                                                                             tanggal = datetime.datetime.now()
-                                                                            if st.button(key="COD Later",label="submit") and diskon != "":
+                                                                            if st.button(key="COD Later",label="submit")  :
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                                 doc_input.set({
                                                                                         "nama": nama,
