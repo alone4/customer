@@ -22,7 +22,7 @@ status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
 jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
 
-def input_pertama():
+def input_pertama(x):
     placeholder = st.empty()
     with placeholder.container():
                                     global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman,game
@@ -47,6 +47,7 @@ def input_pertama():
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
+                                            return x
 
                                      
 def input_kedua():                                            
@@ -204,6 +205,4 @@ def input_kedua():
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
 
-input_pertama()
-if nama != "":
-    input_kedua()
+input_pertama(input_kedua())
