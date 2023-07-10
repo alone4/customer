@@ -85,7 +85,7 @@ def input_kedua():
                                                                                         "harga_barang": harga_barang,
                                                                                         "diskon": diskon,
                                                                                         "ongkir": ongkir,
-                                                                                        "harga_akhir": harga_b(harga_barang,diskon,ongkir),
+                                                                                        "harga_akhir": harga_barang-diskon-ongkir,
                                                                                         "closing_by": closing_by
                                                                             })
                                                                             st.success("data berhasil di masukkan")
