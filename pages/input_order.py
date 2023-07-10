@@ -22,10 +22,11 @@ status_pembayaran_choice = ["Belum bayar (TF)", "Sudah bayar (tf)"]
 jenis_order_choice = ["fu tiktok","fu facebook","ro","fu cs"]
 cs_by = ["salma","alya","salsa","intan"]
 
-def input_pertama(x):
+def input_pertama():
+    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman,placeholder
     placeholder = st.empty()
     with placeholder.container():
-                                    global nama,nama_wa,metode_pem,kota,alamat,no_hp,pengiriman,game
+                                    
                                     check = st.radio("apakah user sudah pernah membeli?", ("belum","sudah"))
                                     if check == "belum":
                                         col1,col2= st.columns(2)
@@ -47,7 +48,6 @@ def input_pertama(x):
                                                     "kota": kota
                                                 })
                                             placeholder.empty()
-                                            x
 
                                      
 def input_kedua():                                            
@@ -205,4 +205,6 @@ def input_kedua():
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
 
-input_pertama(input_kedua())
+input_pertama()
+if placeholder:
+    input_kedua()
