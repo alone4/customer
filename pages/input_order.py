@@ -209,5 +209,5 @@ input_pertama()
 users_ref = db.collection("customer")
 docs = users_ref.stream()
 for doc in docs:
-    if doc.id ==  nama_wa and nama_wa != "":
+    if doc.id ==  nama_wa and nama != "":
         input_kedua()
