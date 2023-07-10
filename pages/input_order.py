@@ -206,5 +206,5 @@ def input_kedua():
                                                                                 switch_page("orderan")
 
 input_pertama()
-if placeholder:
+if placeholder.empty():
     input_kedua()
