@@ -205,5 +205,5 @@ def input_kedua():
                                                                                 switch_page("orderan")
 
 input_pertama()
-
-input_kedua()
+if nama != "":
+    input_kedua()
