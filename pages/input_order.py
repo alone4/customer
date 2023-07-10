@@ -208,6 +208,6 @@ def input_kedua():
 input_pertama()
 users_ref = db.collection("customer")
 docs = users_ref.stream()
-
-if docs.id == nama_wa:
-    input_kedua()
+for doc in docs:
+    if doc.id == nama_wa:
+        input_kedua()
