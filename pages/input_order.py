@@ -175,14 +175,14 @@ def input_kedua():
                                                                                 tanggal_pengiriman = st.date_input("kapan tanggal pengiriman", datetime.datetime.now())
                                                                                 closing_by = st.selectbox("closing by", cs_by)
                                                                             with col2:
-                                                                                barang = st.text_input("nama barang",type=int)
+                                                                                barang = st.text_input("nama barang")
                                                                                 jumlah_barang = st.number_input("jumlah barang")
                                                                                 harga_barang = st.number_input("harga barang awal")
                                                                             ekspedisi = st.selectbox("pilih ekspedisi", eks_choice)
                                                                             diskon = st.number_input("jumlah diskon")
                                                                             ongkir = st.number_input("biaya ongkir")
                                                                             tanggal = datetime.datetime.now()
-                                                                            if st.button(key="COD Later",label="submit") :
+                                                                            if st.button(key="COD Later",label="submit"):
                                                                                 doc_input = db.collection("customer").document(nama_wa).collection("orderan").document(f"{tanggal}")
                                                                                 doc_input.set({
                                                                                         "nama": nama,
