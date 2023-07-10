@@ -205,6 +205,9 @@ def input_kedua():
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
 
+input_pertama()
+users_ref = db.collection("customer")
+docs = users_ref.stream()
 
-if input_pertama():
+if docs.id == nama_wa:
     input_kedua()
