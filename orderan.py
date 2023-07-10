@@ -79,7 +79,7 @@ with cs:
                 
 
                 for doc in docs:
-                    st.write(f"{doc.id}")
+                    nama_cust = doc.id
 
                 users_ref1 = db.collection("customer").document("nazhif").collection("orderan")
                 docs1 = users_ref1.stream()
@@ -87,3 +87,4 @@ with cs:
                     st.write(f"{doc.id} => {doc.to_dict()}")
                     for x,y in doc.to_dict().items():
                         st.write(f"{x} => {y}")
+                st.write(nama_cust)
