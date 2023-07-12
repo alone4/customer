@@ -90,7 +90,7 @@ def input_kedua():
                                                                             })
                                                                             st.success("data berhasil di masukkan")
                                                                             switch_page("orderan")
-    if metode_pem== "TRANSFER" and pengiriman == "ya":
+    elif metode_pem== "TRANSFER" and pengiriman == "ya":
                                                                         
                                                                             col1,col2 = st.columns(2)
                                                                             
@@ -132,7 +132,7 @@ def input_kedua():
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
-    if metode_pem== "COD" and pengiriman == "tidak":
+    elif metode_pem== "COD" and pengiriman == "tidak":
                                                                     
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
@@ -168,7 +168,7 @@ def input_kedua():
                                                                             })
                                                                                 st.success("data berhasil di masukkan")
                                                                                 switch_page("orderan")
-    if metode_pem== "COD" and pengiriman == "ya":
+    elif metode_pem== "COD" and pengiriman == "ya":
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
                                                                                 jenis_order = st.selectbox(key=("streamlit kkontolllllllllllllll"),label="Jenis orderan", options=jenis_order_choice)
