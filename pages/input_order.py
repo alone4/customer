@@ -51,9 +51,9 @@ def input_pertama():
 def harga_b(x,z,y):
         return x-z-y
                                      
-def input_kedua():                                            
-    if metode_pem== "TRANSFER" and pengiriman == "tidak":
-                                                                        
+def input_kedua():                             
+
+    if metode_pem== "TRANSFER" and pengiriman == "tidak":                                 
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
                                                                                 jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)

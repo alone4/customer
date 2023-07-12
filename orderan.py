@@ -80,5 +80,3 @@ with cs:
 
                 for doc in docs:
                     nama_cust = doc.id
-
-                
