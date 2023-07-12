@@ -53,7 +53,7 @@ def harga_b(x,z,y):
                                      
 def input_kedua():                             
 
-    if metode_pem== "TRANSFER" and pengiriman == "tidak":                                 
+    if metode_pem == "TRANSFER" and pengiriman == "tidak":                                 
                                                                             col1,col2 = st.columns(2)
                                                                             with col1:
                                                                                 jenis_order = st.selectbox(key=("asjldhajkfhajkfhakjdfshhjkladfshjkzdbfhjksr"),label="Jenis orderan", options=jenis_order_choice)
@@ -89,7 +89,6 @@ def input_kedua():
                                                                                         "closing_by": closing_by
                                                                             })
                                                                             st.success("data berhasil di masukkan")
-                                                                            switch_page("orderan")
     elif metode_pem== "TRANSFER" and pengiriman == "ya":
                                                                         
                                                                             col1,col2 = st.columns(2)
