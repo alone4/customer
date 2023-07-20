@@ -23,6 +23,8 @@ metode_choice = ["COD","TRANSFER"]
 status_choice = ["Belum bayar (TF)", "Dikirim nanti", "Sudah bayar (tf)", "Pending", "Proses", "Cancel"]
 cs_by = ["salma","alya","salsa","intan"]
 
+st.title("Under Development")
+
 cs,shipping,admin = st.tabs(["cs","shipping","admin"])
 with cs:
         orderan,wa_masuk,fu,ro,barang= st.tabs(["Orderan","WA masuk", "FU","RO","Barang"])
